@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script src="js/functions.js"></script>
+        <title>Localizador de Tweets</title>
+    </head>
+    <body>
+        <div style="float:left">Has iniciado sesión como: @{{ twitter_user }}</div>
+        <div style="float:right"><a href="/cerrar_sesion">Cerrar sesi&oacute;n</a> </div>
+        <div class="centered">
+            <img src="/img/logo.png" width="120" height="120">
+            <h1>Localizador de Tweets</h1>
+            <h3>Búsqueda</h3>
+            <form action="/search" method="get" name="form">
+                <div>
+                    <input name="query" type="text" size="40" style="background-color: #EAE8E8"><br><br>
+                    <input type="button" value="Search" onclick=comprobarFormulario(form)>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
