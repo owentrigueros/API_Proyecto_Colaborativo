@@ -37,6 +37,12 @@ consumer_secret = ''
 
 class BaseHandler(webapp2.RequestHandler):
     def dispatch(self):
+        """
+        >>> dispatch(2, 3)
+        7
+        >>> dispatch('a', 3)
+        'aaa'
+        """
         # Get a session store for this request.
         self.session_store = sessions.get_store(request=self.request)
         try:

@@ -4,7 +4,7 @@ Proyecto colaborativo de la asignatura "Aspectos Profesionales de la Informátic
 ## Instalar dependencias
 Instalar dependencias con pip (Python 2.7) en la carpeta `lib/`:
 
-    python2 -m pip install -t lib/ -r requirements.txt
+    python2 -m pip install -t tweetloc/lib/ -r requirements/app.txt
 
 ## Instalación, configuración y despliege del proyecto
 A continuación, se indica cómo instalar Google Cloud SDK, cómo configurarlo para trabajar con el proyecto y, finalmente, como realizar el despliege de la aplicación en Google Cloud.
@@ -13,7 +13,6 @@ A continuación, se indica cómo instalar Google Cloud SDK, cómo configurarlo p
 - Arch Linux:
 
     yay -S google-cloud-sdk
-
 
 - Ubuntu:
 
