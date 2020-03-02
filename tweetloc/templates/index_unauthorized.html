@@ -2,18 +2,27 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
         <script src="js/functions.js"></script>
-        <title>Localizador de Tweets</title>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip(); //Inicializar el tooltip del botón
+            });
+        </script>
+        <title>TweetLoc</title>
     </head>
-    <body>
-        <div class="centered">
-            <img src="/img/logo.png" width="120" height="120">
-            <h1>Localizador de Tweets</h1>
-            <h3>Autorización</h3>
-            Esta aplicación requiere que autorices tu cuenta de Twitter para hacer uso de ella.<br><br>
-            <a href="/OAuthTwitterHandler">
-                <img src="/img/connect_with_twitter.gif" width="250" height="50" alt="Connect with Twitter">
-            </a>
+    <body class="text-center jumbotron ">
+        <div class="row h-100">
+            <div class="col-sm-12 my-auto"> 
+                <h1 class="display-4">Bienvenido a TweetLoc!</h1>
+                <p><h3>Localizador de Tweets</h3><img src="/img/logo.png" width="120" height="120"></p>
+                <button id="testbutton" class="btn btn-lg btn-primary" data-toggle="tooltip" data-placement="right" title="Necesitas autorizar tu cuenta de Twitter" href="/OAuthTwitterHandler"><i class="fab fa-twitter" ></i> Connect with Twitter </button> 
+                <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
+            </div>
         </div>
     </body>
 </html>
