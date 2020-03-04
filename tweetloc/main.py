@@ -28,7 +28,7 @@ jinja_env = jinja2.Environment(
         autoescape=True)
 
 # GAE app_id and callback_url
-gae_app_id = 'sw-actividad-3'
+gae_app_id = 'api-proyecto-colaborativo'
 gae_callback_url = 'https://' + gae_app_id + '.appspot.com/oauth_callback'
 
 # Twitter keys
@@ -72,7 +72,8 @@ class MainHandler(BaseHandler):
         if (self.isAuthorized()):
             # se ha añadido el nombre de usuario al objeto de sesión
             # para mostrarlo por pantalla
-            datos = { 'twitter_user' : self.session['twitter_user'] }
+            datos = { 'twitter_user' : self.session['twitter_user'],
+                        'firstlogin' : True }
 
             template = jinja_env.get_template("index_authorized.html")
             self.response.out.write(template.render(datos))
@@ -84,11 +85,11 @@ class MainHandler(BaseHandler):
 class SearchTweetsHandler(BaseHandler):
     def get(self):
         # cargamos la plantilla
-        template = jinja_env.get_template("search_results.html")
+        template = jinja_env.get_template("index_authorized.html")
 
         # recogemos el parámetro 'query'
         q = self.request.get('query')
-
+        
         # preparamos la petición
         base_url = 'https://api.twitter.com/1.1/search/tweets.json'
         method = 'GET'
@@ -166,13 +167,13 @@ class SearchTweetsHandler(BaseHandler):
         # token invalido/caducado
         elif (response.status_code == 401):
             logging.debug('Invalid tokens') 
-            self.redirect('/OAuthTwitterHandler')
+            self.redirect('/')
 
         # error distinto
         else:   
             logging.debug(response.status_code)
             logging.debug('Unknown error')
-            self.redirect('/OAuthTwitterHandler')
+            self.redirect('/')
 
 class OAuthTwitterHandler(BaseHandler):
     def get(self):
