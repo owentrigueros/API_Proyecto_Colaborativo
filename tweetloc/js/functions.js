@@ -25,6 +25,7 @@ function refreshMapPlace(place) {
 function comprobarFormulario(form) {
     query = form.query.value; 
     if (query.lenght === 0 || !query.trim()) {
+        $('.toast').toast('show');
         window.alert("La búsqueda no puede estar vacía.");
     }
     else {
