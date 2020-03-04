@@ -28,7 +28,7 @@ jinja_env = jinja2.Environment(
         autoescape=True)
 
 # GAE app_id and callback_url
-gae_app_id = 'sw-actividad-3'
+gae_app_id = 'api-proyecto-colaborativo'
 gae_callback_url = 'https://' + gae_app_id + '.appspot.com/oauth_callback'
 
 # Twitter keys
