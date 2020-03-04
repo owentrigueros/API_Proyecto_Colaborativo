@@ -16,9 +16,9 @@ Bienvenido a la documentación de API Proyecto Colaborativo!
    :caption: Contenidos:
 
    test
-   intro
-   descrip
-   objetivos
+   dop/intro
+   dop/descrip
+   dop/objetivos
    
 
 
