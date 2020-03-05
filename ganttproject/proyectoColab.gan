@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="API Proyecto Colaborativo" company="" webLink="https://api-proyecto-colaborativo.readthedocs.io/en/master/" view-date="2020-02-16" view-index="0" gantt-divider-location="300" resource-divider-location="297" version="2.8.10" locale="es">
+    <description/>
+    <view zooming-state="default:2" id="gantt-chart">
+        <field id="tpd3" name="Nombre" width="167" order="0"/>
+        <field id="tpd4" name="Fecha de inicio" width="65" order="1"/>
+        <field id="tpd5" name="Fecha de fin" width="64" order="2"/>
+        <option id="taskLabelRight" value="resources"/>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Nombre" width="190" order="0"/>
+        <field id="1" name="Función" width="103" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="0" name="Planificación" color="#8cb6ce" meeting="false" start="2020-02-17" duration="12" complete="0" thirdDate="2020-03-05" thirdDate-constraint="0" expand="true"/>
+    </tasks>
+    <resources>
+        <resource id="3" name="Oe" function="Default:1" contacts="" phone="">
+            <rate name="standard" value="19"/>
+        </resource>
+        <resource id="1" name="Owen Trigueros" function="SoftwareDevelopment:2" contacts="" phone="">
+            <rate name="standard" value="18"/>
+        </resource>
+        <resource id="2" name="Iker Urlezaga" function="SoftwareDevelopment:9" contacts="" phone="">
+            <rate name="standard" value="15"/>
+        </resource>
+        <resource id="0" name="Zuhaitz Martínez" function="SoftwareDevelopment:2" contacts="" phone="">
+            <rate name="standard" value="16"/>
+        </resource>
+    </resources>
+    <allocations>
+        <allocation task-id="0" resource-id="3" function="Default:1" responsible="true" load="10.0"/>
+        <allocation task-id="0" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="10.0"/>
+        <allocation task-id="0" resource-id="2" function="SoftwareDevelopment:9" responsible="false" load="10.0"/>
+        <allocation task-id="0" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="10.0"/>
+    </allocations>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+    <roles roleset-name="SoftwareDevelopment"/>
+    <roles>
+        <role id="1" name=""/>
+    </roles>
+</project>
