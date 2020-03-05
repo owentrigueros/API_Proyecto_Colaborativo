@@ -1,19 +1,14 @@
-############
-Introducción
-############
+.. _intro:
 
-A lo largo de esta documentación se irá desarrollando el proceso de mejora de una página web, 
-la cual hace uso de la API de Twitter y Google Maps. 
+************
+Introducción
+************
+
+A lo largo de esta documentación se irá desarrollando el proceso de mejora de una página web, la cual hace uso de la API de Twitter y Google Maps. 
 
 Esta página web se encarga de realizar búsquedas mediante palabras clave y 
 geolocalizar los resultados de búsqueda en un mapa incrustado en la propia página.
 
-
 **Definiciones, acrónimos y abreviaturas**
 
 * API: Interfaz de programación de aplicaciones
-
- 
-
-
-
