@@ -15,11 +15,8 @@ Bienvenido a la documentación de API Proyecto Colaborativo!
    :maxdepth: 2
    :caption: Contenidos:
 
-   test
-   dop/intro
-   dop/descrip
-   dop/objetivos
-   
+   introduccion
+   dop
 
 
 Índices y tablas
