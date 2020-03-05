@@ -72,7 +72,8 @@
                 <div class="card bg-light"
                      onclick="refreshMapCoordinates({{ tweet.location.lat }}, {{ tweet.location.lon }})">
                     {% else %}
-                    <div class="card bg-light" onclick="refreshMapPlace('{{ tweet.location.name }}')">
+                    <div class="card bg-light"
+                         onclick="refreshMapPlace('{{ tweet.location.name }}')">
                         {% endif %}
                         <div class="card-body"> {{ tweet.text }}</div>
                         <div class="card-footer"> {{ tweet.user }} (@{{ tweet.screen_name }})</div>
@@ -84,7 +85,7 @@
             <div class="col-sm-8">
 
                 <iframe id="1"
-                        width="600"
+                        width="800"
                         height="600"
                         frameborder="0"
                         scrolling="no"
