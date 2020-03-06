@@ -91,92 +91,98 @@ class SearchTweetsHandler(BaseHandler):
 
         # recogemos el parámetro 'query'
         q = self.request.get('query')
-        
-    
-        # preparamos la petición
-        base_url = 'https://api.twitter.com/1.1/search/tweets.json'
-        method = 'GET'
-        oauth_token = self.session['oauth_token']
-        oauth_token_secret = self.session['oauth_token_secret']
 
-        oauth_headers = {'oauth_token': oauth_token}
-        params = {'q' : q, 'count' : '100'}
+        if not q:
+            self.redirect('/')
+        else:        
+            # preparamos la petición
+            base_url = 'https://api.twitter.com/1.1/search/tweets.json'
+            method = 'GET'
+            try:
+                oauth_token = self.session['oauth_token']
+                oauth_token_secret = self.session['oauth_token_secret']
 
-        headers = {'User-Agent': 'Localizador de Tweets',
-                'Authorization': createAuthHeader(
-                        method,
-                        base_url,
-                        oauth_headers,
-                        params,
-                        oauth_token_secret)
-                }
+                oauth_headers = {'oauth_token': oauth_token}
+                params = {'q' : q, 'count' : '100'}
 
-        # hacemos la petición
-        response = requests.get(base_url + '?q=' + q + '&count=100', headers=headers)
-        
-        # si la respuesta es correcta, se renderizan los resultados 
-        if (response.status_code == 200):
-            json_response = response.json()
-
-            tweets = []
-            for tweet in json_response['statuses']:
-                # se comprueba que existe la entrada 'place' en el diccionario del Tweet
-                if tweet['place']:
-                    user = tweet['user']['name']
-                    screen_name = tweet['user']['screen_name']
-                    text = tweet['text']
-                    location = tweet['place']
-                    name = location['full_name']
-                    
-                    # si contiene la entrada 'place', es posible que contenga coordenadas precisas
-                    # de la localización en 'coordinates' o 'geo' o que simplemente contenga
-                    # el nombre del lugar desde el que se ha tuiteado en location['place']['full_name']
-                    if tweet['coordinates']:
-                        logging.debug('Place has coordinates: ' + str(tweet['coordinates']))
-                        lon, lat = tweet['coordinates']['coordinates']
-
-                    elif tweet['geo']:
-                        logging.debug('Place has geo: ' + str(tweet['geo']))
-                        lat, lon = tweet['geo']['coordinates']
-
-                    # en este caso nos basaremos en el lugar para localizar el tweet
-                    else:
-                        lon, lat = None, None 
-                
-                    # creamos un diccionario con los datos que nos interesan
-                    data = {
-                        'user' : user,
-                        'screen_name' : screen_name,
-                        'text' : text,
-                        'location' : {
-                            'name' : name,
-                            'lat' : lat,
-                            'lon' : lon
+                headers = {'User-Agent': 'Localizador de Tweets',
+                        'Authorization': createAuthHeader(
+                                method,
+                                base_url,
+                                oauth_headers,
+                                params,
+                                oauth_token_secret)
                         }
-                    }
+            
+                # hacemos la petición
+                response = requests.get(base_url + '?q=' + q + '&count=100', headers=headers)
+           
+            
+            # si la respuesta es correcta, se renderizan los resultados 
+                if (response.status_code == 200):
+                    json_response = response.json()
 
-                    tweets.append(data)
+                    tweets = []
+                    for tweet in json_response['statuses']:
+                        # se comprueba que existe la entrada 'place' en el diccionario del Tweet
+                        if tweet['place']:
+                            user = tweet['user']['name']
+                            screen_name = tweet['user']['screen_name']
+                            text = tweet['text']
+                            location = tweet['place']
+                            name = location['full_name']
+                            
+                            # si contiene la entrada 'place', es posible que contenga coordenadas precisas
+                            # de la localización en 'coordinates' o 'geo' o que simplemente contenga
+                            # el nombre del lugar desde el que se ha tuiteado en location['place']['full_name']
+                            if tweet['coordinates']:
+                                logging.debug('Place has coordinates: ' + str(tweet['coordinates']))
+                                lon, lat = tweet['coordinates']['coordinates']
 
-            query = self.request.get('query')
+                            elif tweet['geo']:
+                                logging.debug('Place has geo: ' + str(tweet['geo']))
+                                lat, lon = tweet['geo']['coordinates']
 
-            # los datos que usaremos para crear el html de los resultados
-            # serán la query del usuario, el nombre de usuario y los tweets
-            datos = { 'query' : q,
-                'twitter_user' : self.session['twitter_user'],
-                'tweets' : tweets }
+                            # en este caso nos basaremos en el lugar para localizar el tweet
+                            else:
+                                lon, lat = None, None 
+                        
+                            # creamos un diccionario con los datos que nos interesan
+                            data = {
+                                'user' : user,
+                                'screen_name' : screen_name,
+                                'text' : text,
+                                'location' : {
+                                    'name' : name,
+                                    'lat' : lat,
+                                    'lon' : lon
+                                }
+                            }
 
-            self.response.out.write(template.render(datos))
+                            tweets.append(data)
 
-        # token invalido/caducado
-        elif (response.status_code == 401):
-            logging.debug('Invalid tokens') 
-            self.redirect('/OAuthTwitterHandler')
+                    query = self.request.get('query')
 
-        # error distinto
-        else:   
-            logging.debug(response.status_code)
-            logging.debug('Unknown error')
-            self.redirect('/OAuthTwitterHandler')
+                    # los datos que usaremos para crear el html de los resultados
+                    # serán la query del usuario, el nombre de usuario y los tweets
+                    datos = { 'query' : q,
+                        'twitter_user' : self.session['twitter_user'],
+                        'tweets' : tweets }
+
+                    self.response.out.write(template.render(datos))
+
+                # token invalido/caducado
+                elif (response.status_code == 401):
+                    logging.debug('Invalid tokens') 
+                    self.redirect('/OAuthTwitterHandler')
+
+                # error distinto
+                else:   
+                    logging.debug(response.status_code)
+                    logging.debug('Unknown error')
+                    self.redirect('/OAuthTwitterHandler')
+            except KeyError:
+                self.redirect('/OAuthTwitterHandler')
 
 class OAuthTwitterHandler(BaseHandler):
     def get(self):
