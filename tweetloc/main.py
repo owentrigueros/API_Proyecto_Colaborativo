@@ -32,8 +32,10 @@ gae_app_id = 'api-proyecto-colaborativo'
 gae_callback_url = 'https://' + gae_app_id + '.appspot.com/oauth_callback'
 
 # Twitter keys
-consumer_key    = ''
-consumer_secret = ''
+api_keys_file = open('APIKEYS.txt','r')
+
+consumer_key    = api_keys_file.readline().replace('\n','')
+consumer_secret = api_keys_file.readline().replace('\n','')
 
 class BaseHandler(webapp2.RequestHandler):
     def dispatch(self):
@@ -90,6 +92,7 @@ class SearchTweetsHandler(BaseHandler):
         # recogemos el parámetro 'query'
         q = self.request.get('query')
         
+    
         # preparamos la petición
         base_url = 'https://api.twitter.com/1.1/search/tweets.json'
         method = 'GET'
@@ -100,17 +103,17 @@ class SearchTweetsHandler(BaseHandler):
         params = {'q' : q, 'count' : '100'}
 
         headers = {'User-Agent': 'Localizador de Tweets',
-                   'Authorization': createAuthHeader(
+                'Authorization': createAuthHeader(
                         method,
                         base_url,
                         oauth_headers,
                         params,
                         oauth_token_secret)
-                  }
+                }
 
         # hacemos la petición
         response = requests.get(base_url + '?q=' + q + '&count=100', headers=headers)
-         
+        
         # si la respuesta es correcta, se renderizan los resultados 
         if (response.status_code == 200):
             json_response = response.json()
@@ -139,7 +142,7 @@ class SearchTweetsHandler(BaseHandler):
                     # en este caso nos basaremos en el lugar para localizar el tweet
                     else:
                         lon, lat = None, None 
-                   
+                
                     # creamos un diccionario con los datos que nos interesan
                     data = {
                         'user' : user,
@@ -167,13 +170,13 @@ class SearchTweetsHandler(BaseHandler):
         # token invalido/caducado
         elif (response.status_code == 401):
             logging.debug('Invalid tokens') 
-            self.redirect('/')
+            self.redirect('/OAuthTwitterHandler')
 
         # error distinto
         else:   
             logging.debug(response.status_code)
             logging.debug('Unknown error')
-            self.redirect('/')
+            self.redirect('/OAuthTwitterHandler')
 
 class OAuthTwitterHandler(BaseHandler):
     def get(self):
