@@ -29,7 +29,13 @@ jinja_env = jinja2.Environment(
 
 # GAE app_id and callback_url
 gae_app_id = 'api-proyecto-colaborativo'
-gae_callback_url = 'https://' + gae_app_id + '.appspot.com/oauth_callback'
+
+if os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine/'):
+    # Production
+    gae_callback_url = 'https://' + gae_app_id + '.appspot.com/oauth_callback'
+else:
+    # Local development server
+    gae_callback_url = 'http://localhost:8080/oauth_callback'
 
 # Twitter keys
 api_keys_file = open('APIKEYS.txt','r')
@@ -39,12 +45,6 @@ consumer_secret = api_keys_file.readline().replace('\n','')
 
 class BaseHandler(webapp2.RequestHandler):
     def dispatch(self):
-        """
-        >>> dispatch(2, 3)
-        7
-        >>> dispatch('a', 3)
-        'aaa'
-        """
         # Get a session store for this request.
         self.session_store = sessions.get_store(request=self.request)
         try:
@@ -195,6 +195,7 @@ class OAuthTwitterHandler(BaseHandler):
                      'Authorization': createAuthHeader(method, url, oauth_headers, None, None)}
         respuesta = requests.post(url, headers=cabeceras)
         cuerpo = respuesta.text
+        logging.info(cuerpo)
 
         # Your application should examine the HTTP status of the response.
         # Any value other than 200 indicates a failure.
@@ -203,6 +204,7 @@ class OAuthTwitterHandler(BaseHandler):
 
         # Your application should verify that oauth_callback_confirmed is true
         oauth_callback_confirmed = cuerpo.split('&')[2].replace('oauth_callback_confirmed=', '')
+
         if oauth_callback_confirmed != 'true':
             logging.debug('oauth_callback_confirmed != true')
 
