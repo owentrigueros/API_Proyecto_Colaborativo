@@ -38,7 +38,7 @@ else:
     gae_callback_url = 'http://localhost:8080/oauth_callback'
 
 # Twitter keys
-api_keys_file = open('APIKEYS.txt','r')
+api_keys_file = open('../tweetloc/APIKEYS.txt','r')
 
 consumer_key    = api_keys_file.readline().replace('\n','')
 consumer_secret = api_keys_file.readline().replace('\n','')
