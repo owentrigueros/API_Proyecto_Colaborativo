@@ -68,6 +68,9 @@ config = {}
 config['webapp2_extras.sessions'] = {'secret_key': 'my-super-secret-key'}
 
 class MainHandler(BaseHandler):
+    """
+    
+    """
     def get(self):
         # dependiendo de si existe una sessión autorizada
         # renderizamos un 'index' u otro
@@ -113,7 +116,7 @@ class SearchTweetsHandler(BaseHandler):
                                 params,
                                 oauth_token_secret)
                         }
-            
+
                 # hacemos la petición
                 response = requests.get(base_url + '?q=' + q + '&count=100', headers=headers)
            
@@ -248,6 +251,19 @@ class OAuthTwitterCallbackHandler(BaseHandler):
         self.redirect('/')
         
 def createAuthHeader(method, base_url, oauth_headers, request_params, oauth_token_secret):
+    """Obtiene el token de autorización necesario para realizar peticiones a la API de Twitter.
+
+    Args:
+        method (str): Tipo de petición HTTP.
+        base_url (str): URL base de la petición.
+        oauth_headers (dict): Cabeceras HTTP para la autenticación.
+        request_params (dict): Parámetros de la petición.
+        oauth_token_secret (str): Token secreto para la autenticación. 
+
+    Returns:
+        authorization_headers (str): Token de autorización para las peticiones futuras.
+
+    """
     oauth_nonce = str(random.randint(0, 999999999))
     oauth_signature_method = "HMAC-SHA1" 
     oauth_timestamp = str(int(time.time()))
