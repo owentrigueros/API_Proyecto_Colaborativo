@@ -247,16 +247,18 @@ class OAuthTwitterCallbackHandler(BaseHandler):
 def createAuthHeader(method, base_url, oauth_headers, request_params, oauth_token_secret):
     """Obtiene el token de autorización necesario para realizar peticiones a la API de Twitter.
 
-    Args:
-        method (str): Tipo de petición HTTP.
-        base_url (str): URL base de la petición.
-        oauth_headers (dict): Cabeceras HTTP para la autenticación.
-        request_params (dict): Parámetros de la petición.
-        oauth_token_secret (str): Token secreto para la autenticación. 
-
-    Returns:
-        authorization_headers (str): Token de autorización para las peticiones futuras.
-
+    :param method: Tipo de petición HTTP
+    :type method: str
+    :param base_url: URL base de la petición
+    :type base_url: str
+    :param oauth_headers: Cabeceras HTTP para la autenticación
+    :type oauth_headers: dict
+    :param request_params: Parámetros de la petición
+    :type request_params: dict
+    :param oauth_token_secret: Token secreto para la autenticación
+    :type oauth_token_secret: str
+    :return: Token de autorización para peticiones futuras
+    :rtype: str
     """
     oauth_nonce = str(random.randint(0, 999999999))
     oauth_signature_method = "HMAC-SHA1" 
