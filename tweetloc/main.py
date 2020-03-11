@@ -37,12 +37,6 @@ else:
     # Local development server
     gae_callback_url = 'http://localhost:8080/oauth_callback'
 
-# Twitter keys
-api_keys_file = open('../tweetloc/APIKEYS.txt','r')
-
-consumer_key    = api_keys_file.readline().replace('\n','')
-consumer_secret = api_keys_file.readline().replace('\n','')
-
 class BaseHandler(webapp2.RequestHandler):
     def dispatch(self):
         # Get a session store for this request.
@@ -269,7 +263,7 @@ def createAuthHeader(method, base_url, oauth_headers, request_params, oauth_toke
     oauth_timestamp = str(int(time.time()))
     oauth_version = "1.0"
 
-    oauth_headers.update({'oauth_consumer_key': consumer_key,
+    oauth_headers.update({'oauth_consumer_key': os.environ.get('TWITTER_CONSUMER_KEY'),
                           'oauth_nonce': oauth_nonce,
                           'oauth_signature_method': oauth_signature_method,
                           'oauth_timestamp': oauth_timestamp,
@@ -319,9 +313,9 @@ def createRequestSignature(method, base_url, oauth_headers, request_params, oaut
                    "&" + urllib.quote(encoded_params, "")
 
     if oauth_token_secret == None:
-        signing_key = urllib.quote(consumer_secret, "") + "&"
+        signing_key = urllib.quote(os.environ.get('TWITTER_CONSUMER_SECRET'), "") + "&"
     else:
-        signing_key = urllib.quote(consumer_secret, "") + "&" + urllib.quote(oauth_token_secret, "")
+        signing_key = urllib.quote(os.environ.get('TWITTER_CONSUMER_SECRET'), "") + "&" + urllib.quote(oauth_token_secret, "")
 
     hashed = hmac.new(signing_key, signature_base, hashlib.sha1)
     oauth_signature = binascii.b2a_base64(hashed.digest())
