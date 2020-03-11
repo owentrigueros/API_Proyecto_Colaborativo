@@ -39,6 +39,9 @@ else:
 
 class BaseHandler(webapp2.RequestHandler):
     def dispatch(self):
+        """Crea un almacén de sesion para la petición actual.
+
+        """
         # Get a session store for this request.
         self.session_store = sessions.get_store(request=self.request)
         try:
@@ -49,10 +52,20 @@ class BaseHandler(webapp2.RequestHandler):
             self.session_store.save_sessions(self.response)
     @webapp2.cached_property
     def session(self):
+        """Devuelve la sesión previamente guardada.
+
+        :return: Sesión previamente creada y guardada
+        :rtype: Session
+        """
         # Returns a session using the default cookie key.
         return self.session_store.get_session()
 
     def isAuthorized(self):
+        """Comprueba si los datos de la sesión son correctos.
+
+        :return: Sesión correcta o fallida
+        :rtype: bool
+        """
         return 'oauth_token' in self.session \
             and 'oauth_token_secret' in self.session \
             and 'user_id' in self.session \
@@ -62,10 +75,12 @@ config = {}
 config['webapp2_extras.sessions'] = {'secret_key': 'my-super-secret-key'}
 
 class MainHandler(BaseHandler):
-    """
-    
-    """
     def get(self):
+        """Define la retrollamada (callback) del MainHandler (manipulador). Si el usuario esta autorizado, muestra la pantalla principal. Si no es así, mostrará la pantalla de sesión no autorizado.
+
+        :param BaseHandler: Clase base para todos los handler (manipuladores) registrados
+        :type BaseHandler: BaseHandler
+        """
         # dependiendo de si existe una sessión autorizada
         # renderizamos un 'index' u otro
         if (self.isAuthorized()):
@@ -83,6 +98,11 @@ class MainHandler(BaseHandler):
 
 class SearchTweetsHandler(BaseHandler):
     def get(self):
+        """Define la retrollamada (callback) del SearchTweetsHandler (manipulador). Gestiona la pagina web donde se realizan las busquedas de contenido en Twitter.
+
+        :param BaseHandler: Clase base para todos los handler (manipuladores) registrados
+        :type BaseHandler: BaseHandler
+        """
         # cargamos la plantilla
         template = jinja_env.get_template("index_authorized.html")
 
@@ -183,6 +203,11 @@ class SearchTweetsHandler(BaseHandler):
 
 class OAuthTwitterHandler(BaseHandler):
     def get(self):
+        """Redirige al usuario para que inicie sesión en Twitter.
+
+        :param BaseHandler: Clase base para todos los handler (manipuladores) registrados
+        :type BaseHandler: BaseHandler
+        """
         # Step 1: Obtaining a request token
         method = 'POST'
         url = 'https://api.twitter.com/oauth/request_token'
@@ -217,6 +242,11 @@ class OAuthTwitterHandler(BaseHandler):
 
 class OAuthTwitterCallbackHandler(BaseHandler):
     def get(self):
+        """Define la retrollamada (callback) de la API de Twitter.
+
+        :param BaseHandler: Clase base para todos los handler (manipuladores) registrados
+        :type BaseHandler: BaseHandler
+        """
         oauth_token = self.request.get("oauth_token")
         oauth_verifier = self.request.get("oauth_verifier")
 
@@ -297,6 +327,21 @@ def createAuthHeader(method, base_url, oauth_headers, request_params, oauth_toke
     return authorization_header
 
 def createRequestSignature(method, base_url, oauth_headers, request_params, oauth_token_secret):
+    """Crea la firma para la autorización de la API de Twitter.
+
+    :param method: Tipo de petición HTTP
+    :type method: str
+    :param base_url: URL base de la petición
+    :type base_url: str
+    :param oauth_headers: Cabeceras HTTP para la autenticación
+    :type oauth_headers: dict
+    :param request_params: Parámetros de la petición
+    :type request_params: dict
+    :param oauth_token_secret: Token secreto para la autenticación
+    :type oauth_token_secret: str
+    :return: Token de autorización para peticiones futuras
+    :rtype: str
+    """
     encoded_params = ''
     params = {}
     params.update(oauth_headers)
@@ -326,6 +371,11 @@ def createRequestSignature(method, base_url, oauth_headers, request_params, oaut
 
 class LogoutHandler(BaseHandler):
     def get(self):
+        """Define la retrollamada (callback) de la API de Twitter al cerrar sesión.
+
+        :param BaseHandler: Clase base para todos los handler (manipuladores) registrados
+        :type BaseHandler: BaseHandler
+        """
         self.session.clear()
         self.redirect('/')
 
