@@ -1,5 +1,5 @@
 sphinx
 sphinx_rtd_theme
-webapp2_extras
+webapp2
 requests==2.22.0
 requests_toolbelt==0.9.1
