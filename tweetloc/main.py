@@ -76,7 +76,8 @@ config['webapp2_extras.sessions'] = {'secret_key': 'my-super-secret-key'}
 
 class MainHandler(BaseHandler):
     def get(self):
-        """Define la retrollamada (callback) del MainHandler (manipulador). Si el usuario esta autorizado, muestra la pantalla principal. Si no es así, mostrará la pantalla de sesión no autorizada.
+        """Define la retrollamada (callback) del MainHandler (manipulador). Recibe un objeto (evento, mensaje, etc) y actua en función del mismo.
+        Si el usuario esta autorizado, muestra la pantalla principal. Si no es así, mostrará la pantalla de sesión no autorizada.
 
         :param BaseHandler: Clase base para todos los handler (manipuladores) registrados
         :type BaseHandler: BaseHandler
