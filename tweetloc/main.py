@@ -204,7 +204,7 @@ class SearchTweetsHandler(BaseHandler):
 
 class OAuthTwitterHandler(BaseHandler):
     def get(self):
-        """Redirige al usuario para iniciar la sesión en Twitter.
+        """Redirige al usuario a la página oficial de Twitter para iniciar sesión.
 
         :param BaseHandler: Clase base para todos los handler (manipuladores) registrados
         :type BaseHandler: BaseHandler
@@ -243,7 +243,7 @@ class OAuthTwitterHandler(BaseHandler):
 
 class OAuthTwitterCallbackHandler(BaseHandler):
     def get(self):
-        """Define la retrollamada (callback) de la API de Twitter.
+        """Define la retrollamada (callback) de la API de Twitter al iniciar sesión desde la página oficial del servicio.
 
         :param BaseHandler: Clase base para todos los handler (manipuladores) registrados
         :type BaseHandler: BaseHandler
