@@ -372,7 +372,7 @@ def createRequestSignature(method, base_url, oauth_headers, request_params, oaut
 
 class LogoutHandler(BaseHandler):
     def get(self):
-        """Define la retrollamada (callback) de la API de Twitter al cerrar sesión.
+        """Define la retrollamada (callback) de la API de Twitter al cerrar sesión. Recibe un objeto (evento, mensaje, etc) y actua en función del mismo.
 
         :param BaseHandler: Clase base para todos los handler (manipuladores) registrados
         :type BaseHandler: BaseHandler
