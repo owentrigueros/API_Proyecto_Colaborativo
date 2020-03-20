@@ -39,7 +39,7 @@ else:
 
 class BaseHandler(webapp2.RequestHandler):
     def dispatch(self):
-        """Crea un almacén de sesion para la petición actual.
+        """Crea un almacén de sesión para la petición actual. Permite mantener parámetros a través de las diferentes peticiones y almacena las cookies generadas que hayan usado la misma instancia de Session.
 
         """
         # Get a session store for this request.
@@ -52,7 +52,7 @@ class BaseHandler(webapp2.RequestHandler):
             self.session_store.save_sessions(self.response)
     @webapp2.cached_property
     def session(self):
-        """Devuelve la sesión previamente guardada.
+        """Devuelve la sesión previamente guardada y en la que se almacenan los parámetros necesarios para la aplicación.
 
         :return: Sesión previamente creada y guardada
         :rtype: Session
@@ -76,7 +76,7 @@ config['webapp2_extras.sessions'] = {'secret_key': 'my-super-secret-key'}
 
 class MainHandler(BaseHandler):
     def get(self):
-        """Define la retrollamada (callback) del MainHandler (manipulador). Si el usuario esta autorizado, muestra la pantalla principal. Si no es así, mostrará la pantalla de sesión no autorizado.
+        """Define la retrollamada (callback) del MainHandler (manipulador). Si el usuario esta autorizado, muestra la pantalla principal. Si no es así, mostrará la pantalla de sesión no autorizada.
 
         :param BaseHandler: Clase base para todos los handler (manipuladores) registrados
         :type BaseHandler: BaseHandler
@@ -203,7 +203,7 @@ class SearchTweetsHandler(BaseHandler):
 
 class OAuthTwitterHandler(BaseHandler):
     def get(self):
-        """Redirige al usuario para que inicie sesión en Twitter.
+        """Redirige al usuario para iniciar la sesión en Twitter.
 
         :param BaseHandler: Clase base para todos los handler (manipuladores) registrados
         :type BaseHandler: BaseHandler
