@@ -101,8 +101,8 @@ Metodos del OAuthTwitterHandler
 
    :param BaseHandler: Clase base para todos los handler (manipuladores) registrados
    :type BaseHandler: BaseHandler
-
-
+   
+   
 
 .. class:: OAuthTwitterCallbackHandler(request=None, response=None)
 
@@ -122,8 +122,8 @@ Metodos del OAuthTwitterCallbackHandler
    :param BaseHandler: Clase base para todos los handler (manipuladores) registrados
    :type BaseHandler: BaseHandler
    
-
-
+   
+   
 Metodo de createAuthHeader
 --------------------------
 
@@ -142,7 +142,7 @@ Metodo de createAuthHeader
    :type oauth_token_secret: str
    :return: Token de autorización para peticiones futuras
    :rtype: str 
-
+   
 
 
 Metodo de createRequestSignature
@@ -163,3 +163,22 @@ Metodo de createRequestSignature
    :type oauth_token_secret: str
    :return: Token de autorización para peticiones futuras
    :rtype: str  
+   
+
+
+.. class:: LogoutHandler(request=None, response=None)
+   
+   Esta clase provee la rutina necesaria para el 'manejador' de cierre de sesión de Twitter.
+
+   :param request: libreria HTTP para gestionar peticiones
+   :param response: libreria HTTP para gestionar respuestas
+
+
+Metodos del LogoutHandler
+-------------------------
+
+.. method:: get()
+
+   Define la retrollamada (callback) de la API de Twitter al cerrar sesión. Recibe un objeto 
+   (evento, mensaje, etc) y actua en función del mismo.
+   
