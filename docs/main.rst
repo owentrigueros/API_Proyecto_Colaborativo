@@ -82,3 +82,22 @@ Metodos del SearchTweetsHandler
 
    :param BaseHandler: Clase base para todos los handler (manipuladores) registrados
    :type BaseHandler: BaseHandler
+
+
+
+.. class:: OAuthTwitterHandler(request=None, response=None)
+
+   Manipulador para autenticación de Twitter.
+   
+   :param BaseHandler: Manipulador base
+   
+   
+Metodos del OAuthTwitterHandler
+-------------------------------
+
+.. method:: get()
+
+   Redirige al usuario a la página oficial de Twitter para iniciar sesión.
+
+   :param BaseHandler: Clase base para todos los handler (manipuladores) registrados
+   :type BaseHandler: BaseHandler
