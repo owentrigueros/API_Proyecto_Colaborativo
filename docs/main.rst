@@ -23,7 +23,10 @@ Metodos del BaseHandler
 
 .. method:: dispatch()
 
-   Crea un almacén de sesión para la petición actual. Permite mantener parámetros a través de las diferentes peticiones y almacena las cookies generadas que hayan usado la misma instancia de Session.
+   Crea un almacén de sesión para la petición actual. 
+   Permite mantener parámetros a través de las diferentes 
+   peticiones y almacena las cookies generadas que hayan 
+   usado la misma instancia de Session.
    
    
 .. method:: isAuthorized()
@@ -35,6 +38,7 @@ Metodos del BaseHandler
 
 .. method:: session()
 
-   Devuelve la sesión previamente guardada y en la que se almacenan los parámetros necesarios para la aplicación.
+   Devuelve la sesión previamente guardada y en la que se 
+   almacenan los parámetros necesarios para la aplicación.
 
    :rtype: Sesión previamente creada y guardada de la clase :class:`Session`
