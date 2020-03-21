@@ -130,6 +130,7 @@ Metodo de createAuthHeader
 .. method:: createAuthHeader(method, base_url, oauth_headers, request_params, oauth_token_secret)
 
    Obtiene el token de autorización necesario para realizar peticiones a la API de Twitter.
+   
    :param method: Tipo de petición HTTP
    :type method: str
    :param base_url: URL base de la petición
@@ -151,6 +152,7 @@ Metodo de createRequestSignature
 .. method:: createRequestSignature(method, base_url, oauth_headers, request_params, oauth_token_secret)
 
    Crea la firma para la autorización de la API de Twitter.
+   
    :param method: Tipo de petición HTTP
    :type method: str
    :param base_url: URL base de la petición
