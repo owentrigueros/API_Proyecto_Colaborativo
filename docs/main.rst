@@ -101,3 +101,23 @@ Metodos del OAuthTwitterHandler
 
    :param BaseHandler: Clase base para todos los handler (manipuladores) registrados
    :type BaseHandler: BaseHandler
+
+
+
+.. class:: OAuthTwitterCallbackHandler(request=None, response=None)
+
+   Manipulador para gestión de respuesta de autenticación de Twitter.
+   
+   :param BaseHandler: Manipulador base
+   
+   
+Metodos del OAuthTwitterCallbackHandler
+---------------------------------------
+
+.. method:: get()
+
+   Define la retrollamada (callback) de la API de Twitter al iniciar sesión desde la página 
+   oficial del servicio.
+
+   :param BaseHandler: Clase base para todos los handler (manipuladores) registrados
+   :type BaseHandler: BaseHandler
