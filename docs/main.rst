@@ -3,7 +3,7 @@
 API Reference
 =============
 
-Esta pagina contiene información sobre el modulo main de tweetloc.
+Esta página contiene información sobre el módulo main de tweetloc.
 
 
 :mod:`tweetloc.main` --- Twitter API wrapper
@@ -13,11 +13,11 @@ Esta pagina contiene información sobre el modulo main de tweetloc.
    
    Esta clase provee la rutina necesaria para el 'manejador' base.
 
-   :param request: libreria HTTP para gestionar peticiones
-   :param response: libreria HTTP para gestionar respuestas
+   :param request: librería HTTP para gestionar peticiones
+   :param response: librería HTTP para gestionar respuestas
 
 
-Metodos del BaseHandler
+Métodos del BaseHandler
 -----------------------
 
 .. method:: dispatch()
@@ -51,13 +51,13 @@ Metodos del BaseHandler
    :param BaseHandler: Manipulador base
 
 
-Metodos del MainHandler
+Métodos del MainHandler
 -----------------------
 
 .. method:: get()
 
    Define la retrollamada (callback) del MainHandler (manipulador). Recibe un objeto (evento, 
-   mensaje, etc) y actua en función del mismo. Si el usuario esta autorizado, muestra la 
+   mensaje, etc) y actúa en función del mismo. Si el usuario está autorizado, muestra la 
    pantalla principal. Si no es así, mostrará la pantalla de sesión no autorizada.
 
    :param BaseHandler: Clase base para todos los handler (manipuladores) registrados
@@ -67,18 +67,18 @@ Metodos del MainHandler
 
 .. class:: SearchTweetsHandler(request=None, response=None)
 
-   Manipulador para busqueda de tweets.
+   Manipulador para búsqueda de tweets.
    
    :param BaseHandler: Manipulador base
    
    
-Metodos del SearchTweetsHandler
+Métodos del SearchTweetsHandler
 -------------------------------
 
 .. method:: get()
 
-   Define la retrollamada (callback) del SearchTweetsHandler (manipulador). Gestiona la pagina web 
-   donde se realizan las busquedas de contenido en Twitter.
+   Define la retrollamada (callback) del SearchTweetsHandler (manipulador). Gestiona la página web 
+   donde se realizan las búsquedas de contenido en Twitter.
 
    :param BaseHandler: Clase base para todos los handler (manipuladores) registrados
    :type BaseHandler: BaseHandler
@@ -92,7 +92,7 @@ Metodos del SearchTweetsHandler
    :param BaseHandler: Manipulador base
    
    
-Metodos del OAuthTwitterHandler
+Métodos del OAuthTwitterHandler
 -------------------------------
 
 .. method:: get()
@@ -111,7 +111,7 @@ Metodos del OAuthTwitterHandler
    :param BaseHandler: Manipulador base
    
    
-Metodos del OAuthTwitterCallbackHandler
+Métodos del OAuthTwitterCallbackHandler
 ---------------------------------------
 
 .. method:: get()
@@ -172,15 +172,15 @@ Metodo de createRequestSignature
    
    Esta clase provee la rutina necesaria para el 'manejador' de cierre de sesión de Twitter.
 
-   :param request: libreria HTTP para gestionar peticiones
-   :param response: libreria HTTP para gestionar respuestas
+   :param request: librería HTTP para gestionar peticiones
+   :param response: librería HTTP para gestionar respuestas
 
 
-Metodos del LogoutHandler
+Métodos del LogoutHandler
 -------------------------
 
 .. method:: get()
 
    Define la retrollamada (callback) de la API de Twitter al cerrar sesión. Recibe un objeto 
-   (evento, mensaje, etc) y actua en función del mismo.
+   (evento, mensaje, etc) y actúa en función del mismo.
    
