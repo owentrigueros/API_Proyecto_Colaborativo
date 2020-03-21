@@ -20,25 +20,48 @@ Esta pagina contiene información sobre el modulo main de tweetloc.
 Metodos del BaseHandler
 -----------------------
 
-
 .. method:: dispatch()
 
-   Crea un almacén de sesión para la petición actual. 
-   Permite mantener parámetros a través de las diferentes 
-   peticiones y almacena las cookies generadas que hayan 
-   usado la misma instancia de Session.
+   Crea un almacén de sesión para la petición actual. Permite mantener parámetros a través de las 
+   diferentes peticiones y almacena las cookies generadas que hayan usado la misma instancia de Session.
    
    
 .. method:: isAuthorized()
 
    Comprueba si los datos de la sesión son correctos.
 
-   :rtype: Sesión correcta o fallida de la clase :class:`bool`
+   :return: Sesión correcta o fallida
+   :rtype: bool
    
 
 .. method:: session()
 
-   Devuelve la sesión previamente guardada y en la que se 
-   almacenan los parámetros necesarios para la aplicación.
+   Devuelve la sesión previamente guardada y en la que se almacenan los parámetros necesarios 
+   para la aplicación.
 
-   :rtype: Sesión previamente creada y guardada de la clase :class:`Session`
+   :return: Sesión previamente creada y guardada
+   :rtype: Session
+   
+   
+   
+.. class:: MainHandler(request=None, response=None)
+
+   Manipulador principal para la aplicación.
+   
+   :param BaseHandler: Manipulador base
+
+
+Metodos del MainHandler
+-----------------------
+
+.. method:: get()
+
+   Define la retrollamada (callback) del MainHandler (manipulador). Recibe un objeto (evento, 
+   mensaje, etc) y actua en función del mismo. Si el usuario esta autorizado, muestra la 
+   pantalla principal. Si no es así, mostrará la pantalla de sesión no autorizada.
+
+   :param BaseHandler: Clase base para todos los handler (manipuladores) registrados
+   :type BaseHandler: BaseHandler
+
+
+   
