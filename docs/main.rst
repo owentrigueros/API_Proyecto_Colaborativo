@@ -64,4 +64,21 @@ Metodos del MainHandler
    :type BaseHandler: BaseHandler
 
 
+
+.. class:: SearchTweetsHandler(request=None, response=None)
+
+   Manipulador para busqueda de tweets.
    
+   :param BaseHandler: Manipulador base
+   
+   
+Metodos del SearchTweetsHandler
+-------------------------------
+
+.. method:: get()
+
+   Define la retrollamada (callback) del SearchTweetsHandler (manipulador). Gestiona la pagina web 
+   donde se realizan las busquedas de contenido en Twitter.
+
+   :param BaseHandler: Clase base para todos los handler (manipuladores) registrados
+   :type BaseHandler: BaseHandler
