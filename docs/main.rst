@@ -121,3 +121,25 @@ Metodos del OAuthTwitterCallbackHandler
 
    :param BaseHandler: Clase base para todos los handler (manipuladores) registrados
    :type BaseHandler: BaseHandler
+   
+
+
+Metodo de createAuthHeader
+--------------------------
+
+.. method:: createAuthHeader(method, base_url, oauth_headers, request_params, oauth_token_secret)
+
+   Obtiene el token de autorización necesario para realizar peticiones a la API de Twitter.
+   :param method: Tipo de petición HTTP
+   :type method: str
+   :param base_url: URL base de la petición
+   :type base_url: str
+   :param oauth_headers: Cabeceras HTTP para la autenticación
+   :type oauth_headers: dict
+   :param request_params: Parámetros de la petición
+   :type request_params: dict
+   :param oauth_token_secret: Token secreto para la autenticación
+   :type oauth_token_secret: str
+   :return: Token de autorización para peticiones futuras
+   :rtype: str 
+   
