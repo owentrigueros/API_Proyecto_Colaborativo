@@ -35,6 +35,45 @@ la cual procesa los archivos para mostrarlos en una página web.
 
 Por otro lado, para la planificación y la gestión del proyecto se hará uso de la herramienta **GanttProject**.
 
+Alcance del proyecto
+####################
+
+A continuación se hablara del ciclo de vida del proyecto, además de definir las fases y funcionalidades 
+adicionales que vamos a implementar en nuestro proyecto. 
+
+Ciclo de vida
++++++++++++++
+
+Se ha decidido utilizar un ciclo de vida lineal, ya que es sencillo de gestionar y las etapas están muy bien 
+diferenciadas. Nuestro proyecto de mejora consta de las siguientes etapas:
+
+.. figure:: figuras/ciclo_vida.png
+  :align: center
+  :alt: Ciclo de vida lineal
+  :figclass: ciclo-vida
+  
+  Figura 1 - Ciclo de vida lineal
+  
+
+Fases del proyecto
+++++++++++++++++++
+
+	* **Planificación y gestión:** Para la correcta realización del proyecto se harán reuniones internas 
+	  periódicas para planificar las tareas a realizar. Además de discutir las diferentes opciones que se puedan utilizar en 
+	  la mejora del proyecto.
+	* **Documentación:** A lo largo del proyecto se irá creando la documentación necesaria para el proyecto, como 
+	  por ejemplo: las actas de reunión, el documento de objetivos del proyecto, la documentación del código.
+	* **Desarrollo:** Con la captura de requisitos, se implementara las mejoras a la página web siguiendo el 
+	  diseño establecido.
+	* **Pruebas:** Ya terminado el proyecto se harán las pruebas necesarias para verificar el correcto funcionamiento 
+	  de la aplicación web.
+	* **Finalización:** Esta última fase consistirá de preparar la presentación.
+
+
+Estructura de descomposición del trabajo
+++++++++++++++++++++++++++++++++++++++++
+
+
 
 
 
