@@ -33,7 +33,8 @@ Se utilizará **GitHub** como herramienta de almacenamiento, tanto para la docum
 además de usarlo para la gestión de versiones. El proyecto con la documentación se enlazara a **Read the Docs** 
 la cual procesa los archivos para mostrarlos en una página web.
 
-Por otro lado, para la planificación y la gestión del proyecto se hará uso de la herramienta **GanttProject**.
+Por otro lado, para la planificación y la gestión del proyecto se hará uso de la herramienta **GanttProject** y el 
+uso de la herramienta **Draw.io** para realizar los diferentes diagramas del proyecto.
 
 Alcance del proyecto
 ####################
