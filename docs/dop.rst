@@ -74,6 +74,55 @@ Fases del proyecto
 Estructura de descomposición del trabajo
 ++++++++++++++++++++++++++++++++++++++++
 
+En la Estructura de Descomposición del Trabajo (EDT) [Figura 2 - Gráfico EDT], se representan las diferentes fases del proyecto.
+
+.. figure:: figuras/EDT.png
+  :align: center
+  :alt: Gráfico EDT
+  :figclass: edt
+  
+  Figura 2 - Gráfico EDT
+
+
+Planificación y gestión
+-----------------------
+
+	* **Reuniones internas:** Se realizarán reuniones entre los integrantes del equipo para acordar las tareas a realizar.
+	
+	
+Documentación
+-------------
+
+	* **Introducción, descripción y objetivos:** Se realizarán los apartados "Introducción", "Descripción" y "Objetivos" de proyecto.
+	* **Herramientas:** Se realizará el apartado de "Herramientas", mostrando así la herramientas utilizadas para la realización de 
+	  este proyecto.
+	* **Alcance:** Se realizará la documentación del alcance.
+	* **Planificación temporal:** Se realizará la documentación y los diagramas de la planificación temporal.
+	* **Evaluación económica y riesgos:** Se realizará la evaluación económica y se identificaran los riesgos posibles.
+	* **Documento de requisitos:** Se realizará el documento de requisitos.
+	* **Identificación de interesados:** Se realizará el documento de identificación de interesados
+	* **Despliegue de ReadTheDocs:** Se desplegará el gestor de documentación ReadTheDocs para mostrar la documentación.
+	
+Desarrollo
+----------
+
+	* **Captura de requisitos:** Se identificarán las tareas y restricciones del proyecto.
+	* **Mejora visual:** Se implementara la mejora visual de la página web.
+	* **Cambio API:** Se implementara la API libre de OpenStreetMaps, reemplazando la de Google Maps.
+	
+Pruebas
+-------
+
+	* **Pruebas de funcionamiento:** Se comprobará el correcto funcionamiento de la aplicación.
+	* **Corrección de errores**
+	
+	
+Finalización
+------------
+
+	* **Preparar presentación:** Se preparara las diapositivas para la presentación.
+	* **Realizar presentación:** Se realizará la presentación del proyecto.
+
 
 
 
