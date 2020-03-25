@@ -12,14 +12,6 @@ tweetloc.appengine\_config module
     :undoc-members:
     :show-inheritance:
 
-tweetloc.example\_google module
--------------------------------
-
-.. automodule:: tweetloc.example_google
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
 tweetloc.main module
 --------------------
 

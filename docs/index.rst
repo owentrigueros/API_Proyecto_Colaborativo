@@ -22,8 +22,6 @@
    implicaciones-legales
    main
 
-
->>>>>>> master
 Índices y tablas
 ==================
 
