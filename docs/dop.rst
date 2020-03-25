@@ -75,7 +75,7 @@ Dada su popularidad, ha sido utilizado previamente en muchas asignaturas del cur
 Subversion
 ----------
 
-Subversion, conocido por las siglas SVN, es otro sistema de control de versiones, también de código abierto y con licencia *free softaware* (Apache License) y desarrollado por la Apache Software Fundation.
+Subversion, conocido por las siglas SVN, es otro sistema de control de versiones, también de código abierto y con licencia *free software* (Apache License) y desarrollado por la Apache Software Fundation.
 
 Su arquitectura es centralizada, es decir, debe existir un servidor central en el que el repositorio se aloja el código y los cambios realizados. Esto implica que el usuario, desde su sistema, no puede crear, por ejemplo, *commits* de manera local. Debe tener acceso al servidor (y por tanto a Internet) para poder aplicar los cambios en el repositorio, alojado en el servidor central.
 
@@ -105,7 +105,7 @@ A continuación, teniendo en cuenta las características, ventajas y desventajas
 | **Rendimiento**              | Rápido                       | Medio                                |
 +------------------------------+------------------------------+--------------------------------------+
 
-Ambos tiene **licencias** permisivas, aunque Apache es menos restrictiva, ya que no requiere el *software* se distribuya bajo la misma licencia ni restringe la comercialización. En este aspecto, más bien de carácter legal, no se ha hecho mucho énfasis, dado que, a efectos prácticos, no se ha pensado en ninguna diferencia entre usar una y otra en este proyecto.
+Ambos tienen **licencias** permisivas, aunque Apache es menos restrictiva, ya que no requiere el *software* se distribuya bajo la misma licencia ni restringe la comercialización. En este aspecto, más bien de carácter legal, no se ha hecho mucho énfasis, dado que, a efectos prácticos, no se ha pensado en ninguna diferencia entre usar una y otra en este proyecto.
 
 En cuanto a la **popularidad**, se considera que Git cuenta con el punto a favor de contar con una comunidad de desarrolladores inmensa, a diferencia de SVN, que no es ni remotamente tan popular. Existe, por tanto, mucha documentación sobre Git (aunque también hay que tener en cuenta que más no es necesariamente mejor, y que, junto a tanta información, también habrá mucho ruido).
 
@@ -118,25 +118,60 @@ La decisión final, por tanto, ha sido utilizar Git. Cabe decir, además, que se
 Gestor de documentación
 =======================
 
-TODO (siguiendo un esquema similar al sistema de control de versiones).
+El término gestor de documentación abarca todas aquellas aplicaciónes utilizadas para administrar los documentos necesarios de un proyecto de manera digital y colaborativa. Para ello, se consideran las siguientes opciones de software libre para seguir con la linea de proyecto **open source**.
 
 .. Un gestor de documentación permite trabajar de manera colaborativa
 
 Wikis
 -----
 
-TODO.
+Término procediente del hawaiano y que significa rápido, se denomina a comunidades donde los usuarios crean, modifican o eliminan contenidos que comparten, generalmente, a través de páginas web.
+
+La tarea principal de estos wikis se trata de crear enciclopedias colectivas o diccionarios con el fin de compartir conocimientos y o textos dentro de diferentes grupos. Para lograr una idea más clara de esta herramienta, solo se debe pensar en páginas web como Wikipedia, WikiHow, etc. basadas en wikis y mundialmente conocidas.
+
+La mayor parte de wikis registran un historial de cambios a modo de línea de tiempo. De esta manera, la coordinación entre los usuarios resulta mas fácil, permite recuperar ediciones anteriores y quedan registrados todos los cambios realizados en el tiempo.
 
 Sphinx
 ------
 
-TODO.
+Sphinx es un generador de documentación de software libre originalmente desarrollado para el lenguaje de programación Python y que posteriormente se extendió a un amplio rango de lenguajes.
+
+Su función principal consiste en convertir ficheros **reStructuredText** en sitios web HTML y otros formatos como PDF, EPub y man. Este lenguaje permite escribir textos con formato definido de manera rápida y cómoda, y está formalizado dentro del grupo **Python Doc-SIG (Documentation Special Interest Group)**.
+
+Sphinx utiliza este tipo de ficheros por su facilidad de adaptación y manejabilidad, tanto que, desde su lanzamiento en 2008, proyectos importantes como **Django, SQLAlchemy, Bazaar, etc.** lo utilizan para generar la documentación.
+
+Al igual que en Git y el servicio de hosting GitHub, Sphinx también cuenta con un servicio de hosting llamado **Read The Docs** que se ha utilizado en este proyecto.
 
 Wikis vs. Sphinx
 ----------------
 
-TODO.
+A continuación, y tal como se ha hecho en la comparación de Git vs. Subversion, se presenta una tabla para comparar ambas herramientas.
 
++------------------------------+------------------------------+--------------------------------------+
+| **Criterios/Herramientas**   | Wikis                        | Sphinx                               |
++==============================+==============================+======================================+
+| **Popularidad**              | Alta                         | Medio                                |
++------------------------------+------------------------------+--------------------------------------+
+| **Licencia**                 | Open content                 | BSD license                          |
++------------------------------+------------------------------+--------------------------------------+
+| **Curva de aprendizaje**     | Fácil de aprender            | Relativamente inclinada              |
++------------------------------+------------------------------+--------------------------------------+
+| **Experiencia previa**       | Sin experiencia previa       | Sin experiencia previa               |
++------------------------------+------------------------------+--------------------------------------+
+| **Local/Remoto**             | Se pueden usar localmente    | Requiere tener acceso a un servidor  |
++------------------------------+------------------------------+--------------------------------------+
+| **Arquitectura**             | Distribuida, descentralizada | Centralizada                         |
++------------------------------+------------------------------+--------------------------------------+
+| **Rendimiento**              | Medio                        | Alto                                 |
++------------------------------+------------------------------+--------------------------------------+
+
+Ambos usan **licencias** permisivas, igual que en la anterior comparación. Este tipo de licencias no restringen la comercialicación ni obligan a la distribución bajo la misma licencia.
+
+La **popularidad** está bastante mas reñida aunque si es verdad que la idea de wikis está más extendida en usuarios no expertos en lenguajes de programación.
+
+La **curva de aprendizaje** y **la experiencia previa** juegan un papel muy importante en la decisión tomada. Pese a no estar familiarizados con este tipo de gestión documental, se ha decidido que escoger Sphinx puede ser valioso para un futuro.
+
+Por tanto, y como decisión final, se ha optado por aprender a usar Sphinx y gestionarlo mediante **hooks** con GitHub, de esta manera y cada vez que se realice un commit, Read The Docs actualizará la documentación de manera autónoma. Cabe mencionar que esta última herramienta tiene mayor rendimiento que las wikis.
 
 Google Cloud
 ============
