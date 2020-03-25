@@ -11,4 +11,6 @@ geolocalizar los resultados de búsqueda en un mapa incrustado en la propia pág
 
 **Definiciones, acrónimos y abreviaturas**
 
-* API: Interfaz de programación de aplicaciones
+* API: *Aplication Programming Interface* (Interfaz de programación de aplicaciones)
+* SCV: Sistema de Control de Versiones
+* SVN: Subversion
