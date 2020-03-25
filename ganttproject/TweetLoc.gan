@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="API Proyecto Colaborativo" company="" webLink="https://api-proyecto-colaborativo.readthedocs.io/en/master/" view-date="2020-02-03" view-index="0" gantt-divider-location="495" resource-divider-location="297" version="2.8.10" locale="es">
+<?xml version="1.0" encoding="UTF-8"?><project name="API Proyecto Colaborativo" company="" webLink="https://api-proyecto-colaborativo.readthedocs.io/en/master/" view-date="2020-02-10" view-index="0" gantt-divider-location="597" resource-divider-location="297" version="2.8.10" locale="es">
     <description/>
     <view zooming-state="default:5" id="gantt-chart">
-        <field id="tpd3" name="Nombre" width="208" order="0"/>
-        <field id="tpd4" name="Fecha de inicio" width="93" order="1"/>
-        <field id="tpd5" name="Fecha de fin" width="100" order="2"/>
-        <field id="tpd12" name="Costo" width="90" order="3"/>
+        <field id="tpd3" name="Nombre" width="324" order="0"/>
+        <field id="tpd4" name="Fecha de inicio" width="104" order="1"/>
+        <field id="tpd5" name="Fecha de fin" width="85" order="2"/>
+        <field id="tpd12" name="Costo" width="80" order="3"/>
         <option id="taskLabelRight" value="resources"/>
     </view>
     <view id="resource-table">
@@ -38,7 +38,7 @@
         <task id="0" name="Planificación y gestión" color="#8cb6ce" meeting="false" start="2020-02-10" duration="49" complete="0" thirdDate="2020-03-05" thirdDate-constraint="0" expand="true">
             <task id="2" name="Reuniones internas" color="#8cb6ce" meeting="false" start="2020-02-10" duration="49" complete="0" thirdDate="2020-02-06" thirdDate-constraint="0" expand="true"/>
         </task>
-        <task id="12" name="Documentación" meeting="false" start="2020-02-10" duration="42" complete="0" expand="true">
+        <task id="12" name="Documentación" meeting="false" start="2020-02-10" duration="39" complete="0" expand="true">
             <task id="13" name="Despliegue de ReadTheDocs" color="#8cb6ce" meeting="false" start="2020-02-10" duration="21" complete="0" thirdDate="2020-02-13" thirdDate-constraint="0" expand="true">
                 <depend id="19" type="2" difference="0" hardness="Strong"/>
                 <depend id="22" type="2" difference="0" hardness="Strong"/>
@@ -56,11 +56,11 @@
                 <depend id="62" type="2" difference="0" hardness="Strong"/>
             </task>
             <task id="62" name="Planificación temporal" color="#8cb6ce" meeting="false" start="2020-03-13" duration="5" complete="0" thirdDate="2020-02-03" thirdDate-constraint="0" expand="true">
-                <depend id="63" type="2" difference="0" hardness="Strong"/>
                 <depend id="89" type="2" difference="0" hardness="Strong"/>
                 <depend id="91" type="2" difference="0" hardness="Strong"/>
+                <depend id="119" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="63" name="Evaluación económica y riesgos" color="#8cb6ce" meeting="false" start="2020-03-18" duration="5" complete="0" thirdDate="2020-02-03" thirdDate-constraint="0" expand="true"/>
+            <task id="119" name="Implicaciones legales" color="#8cb6ce" meeting="false" start="2020-03-18" duration="2" complete="0" thirdDate="2020-02-10" thirdDate-constraint="0" expand="true"/>
         </task>
         <task id="34" name="Desarrollo" color="#8cb6ce" meeting="false" start="2020-02-10" duration="46" complete="0" thirdDate="2020-02-03" thirdDate-constraint="0" expand="true">
             <task id="36" name="Captura de requisitos" color="#8cb6ce" meeting="false" start="2020-02-10" duration="1" complete="0" thirdDate="2020-02-03" thirdDate-constraint="0" expand="true">
@@ -91,23 +91,22 @@
         </task>
     </tasks>
     <resources>
-        <resource id="3" name="Oihane Albizuri" function="Default:1" contacts="" phone="">
+        <resource id="3" name="Oihane" function="Default:1" contacts="" phone="">
             <rate name="standard" value="172.35"/>
         </resource>
-        <resource id="1" name="Owen Trigueros" function="SoftwareDevelopment:2" contacts="" phone="">
+        <resource id="1" name="Owen" function="SoftwareDevelopment:2" contacts="" phone="">
             <rate name="standard" value="167.43"/>
         </resource>
-        <resource id="2" name="Iker Urlezaga" function="SoftwareDevelopment:9" contacts="" phone="">
+        <resource id="2" name="Iker" function="SoftwareDevelopment:9" contacts="" phone="">
             <rate name="standard" value="155.63"/>
         </resource>
-        <resource id="0" name="Zuhaitz Martínez" function="SoftwareDevelopment:2" contacts="" phone="">
+        <resource id="0" name="Zuhaitz" function="SoftwareDevelopment:2" contacts="" phone="">
             <rate name="standard" value="167.43"/>
         </resource>
     </resources>
     <allocations>
         <allocation task-id="36" resource-id="3" function="Default:1" responsible="true" load="1.0"/>
         <allocation task-id="91" resource-id="3" function="Default:1" responsible="true" load="18.0"/>
-        <allocation task-id="63" resource-id="3" function="Default:1" responsible="false" load="2.0"/>
         <allocation task-id="106" resource-id="3" function="Default:1" responsible="true" load="1.0"/>
         <allocation task-id="108" resource-id="3" function="Default:1" responsible="true" load="1.0"/>
         <allocation task-id="116" resource-id="3" function="Default:1" responsible="true" load="1.0"/>
@@ -117,19 +116,19 @@
         <allocation task-id="36" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="1.0"/>
         <allocation task-id="22" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="0.5"/>
         <allocation task-id="91" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="10.0"/>
-        <allocation task-id="43" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="1.0"/>
+        <allocation task-id="43" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="2.0"/>
         <allocation task-id="40" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="1.0"/>
         <allocation task-id="48" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="1.0"/>
-        <allocation task-id="63" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="2.0"/>
         <allocation task-id="106" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="1.0"/>
         <allocation task-id="108" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="1.0"/>
         <allocation task-id="116" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="1.0"/>
         <allocation task-id="118" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="0.5"/>
+        <allocation task-id="119" resource-id="1" function="SoftwareDevelopment:2" responsible="true" load="3.0"/>
         <allocation task-id="36" resource-id="2" function="SoftwareDevelopment:9" responsible="false" load="1.0"/>
         <allocation task-id="89" resource-id="2" function="SoftwareDevelopment:9" responsible="true" load="18.0"/>
-        <allocation task-id="63" resource-id="2" function="SoftwareDevelopment:9" responsible="false" load="2.0"/>
         <allocation task-id="116" resource-id="2" function="SoftwareDevelopment:9" responsible="false" load="1.0"/>
         <allocation task-id="118" resource-id="2" function="SoftwareDevelopment:9" responsible="false" load="0.5"/>
+        <allocation task-id="119" resource-id="2" function="SoftwareDevelopment:9" responsible="false" load="0.5"/>
         <allocation task-id="19" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="2.0"/>
         <allocation task-id="36" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="1.0"/>
         <allocation task-id="22" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="1.0"/>
@@ -137,7 +136,6 @@
         <allocation task-id="40" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="5.0"/>
         <allocation task-id="48" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="6.0"/>
         <allocation task-id="62" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="6.0"/>
-        <allocation task-id="63" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="2.0"/>
         <allocation task-id="116" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="1.0"/>
         <allocation task-id="118" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="0.5"/>
     </allocations>

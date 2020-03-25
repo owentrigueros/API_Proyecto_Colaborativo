@@ -268,3 +268,66 @@ Finalización
 
 	* **Preparar presentación:** Se preparara las diapositivas para la presentación.
 	* **Realizar presentación:** Se realizará la presentación del proyecto.
+	
+
+Planificación temporal
+**********************
+
+Aquí se muestra la planificación temporal acordada entre los miembros del equipo. A continuación, 
+se ha realizado un diagrama Gantt partiendo de esta tabla (:numref:`tabla_planificacion`), para mostrar de forma 
+más clara el desarrollo del proyecto, así como estimar su duración.
+
+.. _tabla_planificacion:
+.. csv-table:: 
+   :header: "Fase/Tarea", "Esfuerzo (horas)", "Duración (días)"
+   :widths: 20 12 12
+   :class: myclass
+
+   **1. Planificación y gestión**, **?** , **49**
+   "1.1 Reuniones internas", ? , 49
+   **2. Documentación**, **41.5** , **41**
+   "2.1 Despliegue de ReadTheDocs", 12, 21
+   "2.2 Identificación de interesados", 2.5, 1
+   "2.3 Documento de requisitos", 1.5 , 1
+   "2.4.1 Introducción, descripción y objetivos", 6 , 3
+   "2.4.2 Herramientas", 3 , 3
+   "2.4.3 Alcance", 7 , 5
+   "2.4.4 Planificación temporal", 6 , 5
+   "2.9 Implicaciones legales", 3.5 , 2
+   **3 Desarrollo**, **50** , **46**
+   "3.1 Captura de requisitos", 4 , 1
+   "3.2 Mejora visual", 18 , 9
+   "3.3 Cambio API", 28 , 9
+   **4 Pruebas**, **4** , **2**
+   "4.1 Pruebas de funcionamiento", 2 , 1
+   "4.2 Corrección de errores", 2 , 1
+   **5 Finalización**, **6** , **2**
+   "5.1 Preparar presentación", 4 , 1
+   "5.2 Realizar presentación", 2 , 1
+   **Total Proyecto**, **101.5?**, **140**
+   
+   
+Diagrama GanttProject
+=====================
+
+A continuación se muestra la tabla con las fechas de inicio y fin de cada tarea proporcionada 
+por GanttProject (:numref:`tweetloc_tabla`), además del diagrama (:numref:`tweetloc_plan`), donde se 
+refleja los recursos utilizados.
+
+.. _tweetloc_tabla:
+.. figure:: _static/TweetLoc_tabla.png
+   :align: center
+   :alt: Planificación temporal del Gantt
+   :figclass: plan_temp_gantt
+   
+   Planificación temporal del Gantt
+   
+
+
+.. _tweetloc_plan:
+.. figure:: _static/TweetLoc_plan.png
+   :align: center
+   :alt: Diagrama Gantt
+   :figclass: diagrama_gantt
+   
+   Diagrama Gantt
