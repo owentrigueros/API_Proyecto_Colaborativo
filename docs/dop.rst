@@ -285,7 +285,7 @@ más clara el desarrollo del proyecto, así como estimar su duración.
 
    **1. Planificación y gestión**, **?** , **49**
    "1.1 Reuniones internas", ? , 49
-   **2. Documentación**, **39.5** , **41**
+   **2. Documentación**, **41.5** , **41**
    "2.1 Despliegue de ReadTheDocs", 12, 21
    "2.2 Identificación de interesados", 2.5, 1
    "2.3 Documento de requisitos", 1.5 , 1
@@ -304,7 +304,7 @@ más clara el desarrollo del proyecto, así como estimar su duración.
    **5 Finalización**, **6** , **2**
    "5.1 Preparar presentación", 4 , 1
    "5.2 Realizar presentación", 2 , 1
-   **Total Proyecto**, **89.5?**, **140**
+   **Total Proyecto**, **101.5?**, **140**
    
    
 Diagrama GanttProject
