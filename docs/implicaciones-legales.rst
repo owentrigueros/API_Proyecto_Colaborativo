@@ -14,6 +14,11 @@ La principal funcionalidad de la *app* es la de conseguir *tweets* que contengan
 
 Por lo tanto, podemos afirmar que la aplicación cumple con las premisas del Reglamento Europeo de Protección de Datos puesto que muestra con total transparencia el uso que realiza de los datos y delega funcionalidades que trabajan con información sensible a los agentes que deberían tratarlos. En este caso, la empresa Twitter.
 
+Ley de Servicios de la Sociedad de la Información y el Comercio Electrónico
+***************************************************************************
+
+La Ley de Servicios de la Sociedad de la Información y el Comercio Electrónico, obliga a que la web muestre un apartado de <<Aviso Legal>>. Como se ha mencionado anteriormente, la *app* delega la gestión de los datos a Twitter. La pantalla de inicio de sesión que proporciona Twitter, muestra de manera clara los permisos que va a utilizar y las implicaciones legales que conlleva aceptar los términos. En consecuencia, confirmamos que la *app* cumple la LSSI. 
+
 Uso de Twitter para Desarrolladores
 ***********************************
 
