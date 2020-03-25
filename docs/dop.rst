@@ -1,63 +1,175 @@
 .. _dop:
 
-***********************************
 Documento de objetivos del proyecto
-***********************************
+###################################
+
+En el documento de objetivos del proyecto se recoge gran parte de la documentación del proyecto, incluyendo su descripción, los objetivos, los criterios con los que se han elegido las herramientas y el alcance.
 
 Descripción del proyecto
-########################
+************************
 
-El proyecto se trata de una página web en la que el usuario inicia sesión con su cuenta de Twitter
-y, cuando se cedan los permisos que se piden, el usuario dispondrá de un buscador en el cual podrá 
-introducir lo que quiera buscar. Esto generará un listados con los tweets que tengan una ubicación añadida, y 
-con ellas el usuario será capaz de marcarlas en un mapa para conocer la ubicación exacta.
+El proyecto trata de mejorar una página web desarrollada para la asignatura de Sistemas Web.
+La aplicación permite al usuario, tras iniciar sesión con su cuenta de Twitter, hacer búsquedas de *tweets* geolocalizados por palabras clave.
+La lista de *tweets* obtenida como resultado se mostrará al lado de un mapa y el usuario podrá seleccionar el *tweet* que quiera para situarlo.
+
+En la :numref:`old_1` se muestra la pantalla de inicio de la aplicación a mejorar, previo a que el usuario haya conectado su cuenta de Twitter.
+
+.. _old_1:
+.. figure:: _static/old_1.png
+  :align: center
+  :alt: Inicio de la versión antigua de la aplicación
+  :figclass: old_1
+  
+  Inicio de la versión antigua de la aplicación (sin sesión iniciado)
+
+Por otro lado, en la :numref:`old_2` se muestra la pantalla de inicio una vez el usuario ha iniciado sesión, donde el usuario puede realizar las búsquedas.
+
+.. _old_2:
+.. figure:: _static/old_2.png
+  :align: center
+  :alt: Inicio de la versión antigua de la aplicación (con sesión iniciado)
+  :figclass: old_2
+  
+  Inicio de la versión antigua de la aplicación (con sesión iniciado)
+
+Finalmente, la figura :numref:`old_3` muestra los resultados de una búsqueda, junto al mapa que permite localzar los *tweets*.
+
+.. _old_3:
+.. figure:: _static/old_3.png
+  :align: center
+  :alt: Inicio de la versión antigua de la aplicación
+  :figclass: old_3
+  
+  Resultado de búsqueda de la versión angitua de la aplicación
+
 
 Objetivos del proyecto
-######################
+**********************
 
-El objetivo de este proyecto es aplicar diferentes mejoras a una aplicación 
-ya implementada. También se basará en aprender a utilizar correctamente herramientas 
-de control de versiones, además de comparar diferentes alternativas.
+El objetivo de este proyecto es aplicar diferentes mejoras a una aplicación ya implementada.
+También se basará en aprender a utilizar correctamente herramientas de control de versiones, además de comparar diferentes alternativas.
 
-Para las mejoras de la aplicación se tratará de ampliar las funciones con las que 
-dispone la aplicación original. Además de realizar mejoras en el diseño de la aplicación web, se 
-sustituirá la API Google Maps por una alternativa libre como OpenStreetMaps.
+Para las mejoras de la aplicación se tratará de ampliar las funciones con las que dispone la aplicación original.
+Además de realizar mejoras en el diseño de la aplicación web, se sustituirá la API Google Maps por una alternativa libre.
+.. como OpenStreetMaps.
 
 Herramientas
-############
+************
 
-Para el despliegue de la página web se utilizará la plataforma de **Google Cloud**, ya que la aplicación original, 
-en la que nos basamos, esta implementada en esta plataforma.
+En esta sección se describen las herramientas empleadas para llevar a cabo el proyecto. Además, en el caso de el sistema de control de versiones y el gestor de documentación, se realiza un análisis de las alternativas que se han considerado y se explican las razones por las que se han elegido las que finalmente se han utilizado.
 
-Se utilizará **GitHub** como herramienta de almacenamiento, tanto para la documentación como para el código, 
-además de usarlo para la gestión de versiones. El proyecto con la documentación se enlazara a **Read the Docs** 
-la cual procesa los archivos para mostrarlos en una página web.
+Sistema de control de versiones
+===============================
 
-Por otro lado, para la planificación y la gestión del proyecto se hará uso de la herramienta **GanttProject** y el 
-uso de la herramienta **Draw.io** para realizar los diferentes diagramas del proyecto.
+Un sistema de control de versiones permite gestionar los cambios que se hacen sobre **software**, documentos y demás elementos basados en algún tipo de código fuente. Existen múltiples sistemas de este tipo, pero se han considerado dos, Git y Subversion (SVN), como posibles alternativas para este proyecto.
+
+Git
+---
+
+Git, desarrollado originalmente por Linus Torvalds, creado del kernel Linux, es el sistema de control de versiones más popular hoy en día, distribuido bajo la licencias licencias *free software* GPLv2 y LGPLv2.1.
+
+Es de arquitectura distribuida, lo que significa que existe una copia del repositorio y su historial completo de cambios en el sistema de cada desarrollador. También es descentralizado, lo que posibilita que los cambios puedan realizarse de manera local para posteriormente ser sincronizados con el resto de copias, sin requerir tener acceso a un servidor central y por tanto sin requerir tener Internet para realizar cambios en el repositorio (aunque esto último, hoy en día, no suponga realmente un problema). Otro aspecto a favor de Git es su buen rendimiento.
+
+Dada su popularidad, ha sido utilizado previamente en muchas asignaturas del curso, por lo que se cuenta con experiencia previa, lo que compensa que la curva de aprendizaje sea relativamente inclinada.
+
+Subversion
+----------
+
+Subversion, conocido por las siglas SVN, es otro sistema de control de versiones, también de código abierto y con licencia *free softaware* (Apache License) y desarrollado por la Apache Software Fundation.
+
+Su arquitectura es centralizada, es decir, debe existir un servidor central en el que el repositorio se aloja el código y los cambios realizados. Esto implica que el usuario, desde su sistema, no puede crear, por ejemplo, *commits* de manera local. Debe tener acceso al servidor (y por tanto a Internet) para poder aplicar los cambios en el repositorio, alojado en el servidor central.
+
+Hoy en día, aunque utilizado por diversos proyectos, no es de gran popularidad. Esto supone que no hay tanta información por parte de la comunidad, porque esta es más pequeña, y, por tanto, a la hora de resolver problemas que puedan surgir probablemente no sea tan fácil encontrar respuestas en foros como StackOverflow como lo puede ser con otros sistemas de control de versiones más populares.
+
+
+Git vs. Subversion
+------------------
+
+A continuación, teniendo en cuenta las características, ventajas y desventajas de los sistemas de control de versiones descritos, se presenta una tabla que recoge los criterios que se han tenido en cuenta a la hora de elegir el sistema empleado.
+
++------------------------------+------------------------------+--------------------------------------+
+| **Criterios/Herramientas**   | Git                          | Subversion                           |
++==============================+==============================+======================================+
+| **Popularidad**              | Alta                         | Baja                                 |
++------------------------------+------------------------------+--------------------------------------+
+| **Licencia**                 | GPLv2/LGPLv2.1               | Apache License                       |
++------------------------------+------------------------------+--------------------------------------+
+| **Curva de aprendizaje**     | Relativamente inclinada      | No tan inclinada, fácil de aprender  |
++------------------------------+------------------------------+--------------------------------------+
+| **Experiencia previa**       | Se ha empleado anteriormente | Sin experiencia previa               |
++------------------------------+------------------------------+--------------------------------------+
+| **Local/Remoto**             | Se pueden usar localmente    | Requiere tener acceso a un servidor  |
++------------------------------+------------------------------+--------------------------------------+
+| **Arquitectura**             | Distribuida, descentralizada | Centralizada                         |
++------------------------------+------------------------------+--------------------------------------+
+| **Rendimiento**              | Rápido                       | Medio                                |
++------------------------------+------------------------------+--------------------------------------+
+
+Ambos tiene **licencias** permisivas, aunque Apache es menos restrictiva, ya que no requiere el *software* se distribuya bajo la misma licencia ni restringe la comercialización. En este aspecto, más bien de carácter legal, no se ha hecho mucho énfasis, dado que, a efectos prácticos, no se ha pensado en ninguna diferencia entre usar una y otra en este proyecto.
+
+En cuanto a la **popularidad**, se considera que Git cuenta con el punto a favor de contar con una comunidad de desarrolladores inmensa, a diferencia de SVN, que no es ni remotamente tan popular. Existe, por tanto, mucha documentación sobre Git (aunque también hay que tener en cuenta que más no es necesariamente mejor, y que, junto a tanta información, también habrá mucho ruido).
+
+La **curva de aprendizaje** y la **experiencia previa** deben analizarse en conjunto. Si bien es cierto que es popularmente aceptado que Git es más difícil, dada su popularidad, ha sido la herramienta utilizada en asignaturas previas, y no se cuenta con experiencia previa utilizando SVN, aunque sea más sencillo. Esto compensa que la curva de aprendizaje sea marcada.
+
+Finalmente, entrando en temas más técnicos, aunque con implicaciones prácticas, la **arquitectura** de Git, descentralizada y distribuida, se considera más apropiada por preferencia personal de los miembros del grupo que la de Subversion, que es centralizada. La idea de tener el repositorio completo en nuestros sistemas y poder hacer cambios en **local** sin depender del acceso a un servidor central es preferible. Git es, además, superior a SVN en términos de rendimiento.
+
+La decisión final, por tanto, ha sido utilizar Git. Cabe decir, además, que se ha elegido GitHub como servicio para el *hosting* del repositorio principal, dado que permite ser sincronizado con el gestor de documentación elegido. Esto permite que bien el código y bien la documentación residan en el mismo repositorio y sean gestionados de manera conjunta por el mismo sistema de control de versiones. Además, como se verá, el gestor de documentación leerá el código automáticamente para incluirlo.
+
+Gestor de documentación
+=======================
+
+TODO (siguiendo un esquema similar al sistema de control de versiones).
+
+.. Un gestor de documentación permite trabajar de manera colaborativa
+
+Wikis
+-----
+
+TODO.
+
+Sphinx
+------
+
+TODO.
+
+Wikis vs. Sphinx
+----------------
+
+TODO.
+
+
+Google Cloud
+============
+Para el despliegue de la página web se utilizará la plataforma de **Google Cloud**, ya que la aplicación original, en la que nos basamos, está implementada en esta plataforma.
+
+GanttProject
+============
+El proyecto requiere de una planificación temporal, concretamente, un diagrama Gantt, y de algún tipo de *software* para ser gestionado. Se ha elegido **GanttProject**, que permite hacer las dos cosas y con el que se tiene experiencia previa.
+
+Draw.io
+=======
+**Draw.io** es herramienta con la que se realizarán los diagramas del proyecto.
 
 Alcance del proyecto
-####################
+********************
 
-A continuación se hablara del ciclo de vida del proyecto, además de definir las fases y funcionalidades 
-adicionales que vamos a implementar en nuestro proyecto. 
+A continuación se hablara del ciclo de vida del proyecto, además de definir las fases y funcionalidades adicionales que vamos a implementar en nuestro proyecto. 
 
 Ciclo de vida
-+++++++++++++
+=============
 
-Se ha decidido utilizar un ciclo de vida lineal, ya que es sencillo de gestionar y las etapas están muy bien 
-diferenciadas. Nuestro proyecto de mejora consta de las siguientes etapas:
+Se ha decidido utilizar un ciclo de vida lineal (:numref:`ciclo_vida`), ya que es sencillo de gestionar y las etapas están muy bien diferenciadas. Nuestro proyecto de mejora consta de las siguientes etapas:
 
-.. figure:: figuras/ciclo_vida.png
+.. _ciclo_vida:
+.. figure:: _static/ciclo_vida.png
   :align: center
   :alt: Ciclo de vida lineal
   :figclass: ciclo-vida
   
-  Figura 1 - Ciclo de vida lineal
-  
+  Ciclo de vida lineal
 
 Fases del proyecto
-++++++++++++++++++
+==================
 
 	* **Planificación y gestión:** Para la correcta realización del proyecto se harán reuniones internas 
 	  periódicas para planificar las tareas a realizar. Además de discutir las diferentes opciones que se puedan utilizar en 
@@ -70,18 +182,18 @@ Fases del proyecto
 	  de la aplicación web.
 	* **Finalización:** Esta última fase consistirá de preparar la presentación.
 
+Estructura de Descomposición del Trabajo
+========================================
 
-Estructura de descomposición del trabajo
-++++++++++++++++++++++++++++++++++++++++
+En la Estructura de Descomposición del Trabajo (EDT) (:numref:`edt`), se representan las diferentes fases del proyecto.
 
-En la Estructura de Descomposición del Trabajo (EDT) [Figura 2 - Gráfico EDT], se representan las diferentes fases del proyecto.
-
-.. figure:: figuras/EDT.png
+.. _edt:
+.. figure:: _static/edt.png
   :align: center
   :alt: Gráfico EDT
   :figclass: edt
   
-  Figura 2 - Gráfico EDT
+  Gráfico EDT
 
 
 Planificación y gestión
@@ -122,9 +234,3 @@ Finalización
 
 	* **Preparar presentación:** Se preparara las diapositivas para la presentación.
 	* **Realizar presentación:** Se realizará la presentación del proyecto.
-
-
-
-
-
-
