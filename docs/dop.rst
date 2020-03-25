@@ -32,7 +32,7 @@ Por otro lado, en la :numref:`old_2` se muestra la pantalla de inicio una vez el
   
   Inicio de la versión antigua de la aplicación (con sesión iniciado)
 
-Finalmente, la figura :numref:`old_3` muestra los resultados de una búsqueda, junto al mapa que permite localzar los *tweets*.
+Finalmente, la figura :numref:`old_3` muestra los resultados de una búsqueda, junto al mapa que permite localizar los *tweets*.
 
 .. _old_3:
 .. figure:: _static/old_3.png
@@ -40,7 +40,7 @@ Finalmente, la figura :numref:`old_3` muestra los resultados de una búsqueda, j
   :alt: Inicio de la versión antigua de la aplicación
   :figclass: old_3
   
-  Resultado de búsqueda de la versión angitua de la aplicación
+  Resultado de búsqueda de la versión antigua de la aplicación
 
 
 Objetivos del proyecto
@@ -50,8 +50,7 @@ El objetivo de este proyecto es aplicar diferentes mejoras a una aplicación ya 
 También se basará en aprender a utilizar correctamente herramientas de control de versiones, además de comparar diferentes alternativas.
 
 Para las mejoras de la aplicación se tratará de ampliar las funciones con las que dispone la aplicación original.
-Además de realizar mejoras en el diseño de la aplicación web, se sustituirá la API Google Maps por una alternativa libre.
-.. como OpenStreetMaps.
+Además de realizar mejoras en el diseño de la aplicación web, se sustituirá la API Google Maps por una alternativa libre como OpenStreetMaps.
 
 Herramientas
 ************
@@ -66,7 +65,7 @@ Un sistema de control de versiones permite gestionar los cambios que se hacen so
 Git
 ---
 
-Git, desarrollado originalmente por Linus Torvalds, creado del kernel Linux, es el sistema de control de versiones más popular hoy en día, distribuido bajo la licencias licencias *free software* GPLv2 y LGPLv2.1.
+Git, desarrollado originalmente por Linus Torvalds, creado del kernel Linux, es el sistema de control de versiones más popular hoy en día, distribuido bajo la licencias *free software* GPLv2 y LGPLv2.1.
 
 Es de arquitectura distribuida, lo que significa que existe una copia del repositorio y su historial completo de cambios en el sistema de cada desarrollador. También es descentralizado, lo que posibilita que los cambios puedan realizarse de manera local para posteriormente ser sincronizados con el resto de copias, sin requerir tener acceso a un servidor central y por tanto sin requerir tener Internet para realizar cambios en el repositorio (aunque esto último, hoy en día, no suponga realmente un problema). Otro aspecto a favor de Git es su buen rendimiento.
 
@@ -75,7 +74,7 @@ Dada su popularidad, ha sido utilizado previamente en muchas asignaturas del cur
 Subversion
 ----------
 
-Subversion, conocido por las siglas SVN, es otro sistema de control de versiones, también de código abierto y con licencia *free software* (Apache License) y desarrollado por la Apache Software Fundation.
+Subversion, conocido por las siglas SVN, es otro sistema de control de versiones, también de código abierto y con licencia *free software* (Apache License) y desarrollado por la Apache Software Foundation.
 
 Su arquitectura es centralizada, es decir, debe existir un servidor central en el que el repositorio se aloja el código y los cambios realizados. Esto implica que el usuario, desde su sistema, no puede crear, por ejemplo, *commits* de manera local. Debe tener acceso al servidor (y por tanto a Internet) para poder aplicar los cambios en el repositorio, alojado en el servidor central.
 
@@ -118,7 +117,7 @@ La decisión final, por tanto, ha sido utilizar Git. Cabe decir, además, que se
 Gestor de documentación
 =======================
 
-El término gestor de documentación abarca todas aquellas aplicaciónes utilizadas para administrar los documentos necesarios de un proyecto de manera digital y colaborativa. Para ello, se consideran las siguientes opciones de software libre para seguir con la linea de proyecto **open source**.
+El término gestor de documentación abarca todas aquellas aplicaciones utilizadas para administrar los documentos necesarios de un proyecto de manera digital y colaborativa. Para ello, se consideran las siguientes opciones de software libre para seguir con la línea de proyecto **open source**.
 
 .. Un gestor de documentación permite trabajar de manera colaborativa
 
@@ -129,7 +128,7 @@ Término procediente del hawaiano y que significa rápido, se denomina a comunid
 
 La tarea principal de estos wikis se trata de crear enciclopedias colectivas o diccionarios con el fin de compartir conocimientos y o textos dentro de diferentes grupos. Para lograr una idea más clara de esta herramienta, solo se debe pensar en páginas web como Wikipedia, WikiHow, etc. basadas en wikis y mundialmente conocidas.
 
-La mayor parte de wikis registran un historial de cambios a modo de línea de tiempo. De esta manera, la coordinación entre los usuarios resulta mas fácil, permite recuperar ediciones anteriores y quedan registrados todos los cambios realizados en el tiempo.
+La mayor parte de wikis registran un historial de cambios a modo de línea de tiempo. De esta manera, la coordinación entre los usuarios resulta más fácil, permite recuperar ediciones anteriores y quedan registrados todos los cambios realizados en el tiempo.
 
 Sphinx
 ------
@@ -165,9 +164,9 @@ A continuación, y tal como se ha hecho en la comparación de Git vs. Subversion
 | **Rendimiento**              | Medio                        | Alto                                 |
 +------------------------------+------------------------------+--------------------------------------+
 
-Ambos usan **licencias** permisivas, igual que en la anterior comparación. Este tipo de licencias no restringen la comercialicación ni obligan a la distribución bajo la misma licencia.
+Ambos usan **licencias** permisivas, igual que en la anterior comparación. Este tipo de licencias no restringen la comercialización ni obligan a la distribución bajo la misma licencia.
 
-La **popularidad** está bastante mas reñida aunque si es verdad que la idea de wikis está más extendida en usuarios no expertos en lenguajes de programación.
+La **popularidad** está bastante más reñida aunque si es verdad que la idea de wikis está más extendida en usuarios no expertos en lenguajes de programación.
 
 La **curva de aprendizaje** y **la experiencia previa** juegan un papel muy importante en la decisión tomada. Pese a no estar familiarizados con este tipo de gestión documental, se ha decidido que escoger Sphinx puede ser valioso para un futuro.
 
@@ -241,7 +240,7 @@ Documentación
 -------------
 
 	* **Introducción, descripción y objetivos:** Se realizarán los apartados "Introducción", "Descripción" y "Objetivos" de proyecto.
-	* **Herramientas:** Se realizará el apartado de "Herramientas", mostrando así la herramientas utilizadas para la realización de 
+	* **Herramientas:** Se realizará el apartado de "Herramientas", mostrando así las herramientas utilizadas para la realización de
 	  este proyecto.
 	* **Alcance:** Se realizará la documentación del alcance.
 	* **Planificación temporal:** Se realizará la documentación y los diagramas de la planificación temporal.
