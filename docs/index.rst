@@ -21,8 +21,6 @@ Bienvenido a la documentación de API Proyecto Colaborativo!
    dop
    implicaciones-legales
    
-
-
 Índices y tablas
 ==================
 
