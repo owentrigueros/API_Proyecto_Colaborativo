@@ -1,7 +1,9 @@
-.. _intere:
+.. _interesados:
 
 Identificación de los interesados
 *********************************
+
+En la siguiente tabla se listan los interesados identificados del proyecto, sus objetivos e influencia respecto al mismo, el medio de comunicación que se utilizará con cada uno de ellos y, finalmente, el procedimiento que se seguirá a la hora de solucionar problemas.
 
 +----------------------+---------------------------+-----------------+----------------------+-----------------------------+
 |                                   Matriz para la identificación de los interesados                                      |
