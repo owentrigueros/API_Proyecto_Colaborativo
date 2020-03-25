@@ -19,6 +19,7 @@ Bienvenido a la documentación de API Proyecto Colaborativo!
    interesados
    requisitos
    dop
+   implicaciones-legales
    
 
 
