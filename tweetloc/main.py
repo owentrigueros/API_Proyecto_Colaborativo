@@ -28,20 +28,19 @@ jinja_env = jinja2.Environment(
         autoescape=True)
 
 # GAE app_id and callback_url
-gae_app_id = 'sw-actividad-3'
-gae_callback_url = 'https://' + gae_app_id + '.appspot.com/oauth_callback'
+gae_app_id = 'api-proyecto-colaborativo'
 
-# Twitter keys
-consumer_key    = ''
-consumer_secret = ''
+if os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine/'):
+    # Production
+    gae_callback_url = 'https://' + gae_app_id + '.appspot.com/oauth_callback'
+else:
+    # Local development server
+    gae_callback_url = 'http://localhost:8080/oauth_callback'
 
 class BaseHandler(webapp2.RequestHandler):
     def dispatch(self):
-        """
-        >>> dispatch(2, 3)
-        7
-        >>> dispatch('a', 3)
-        'aaa'
+        """Crea un almacén de sesión para la petición actual. Permite mantener parámetros a través de las diferentes peticiones y almacena las cookies generadas que hayan usado la misma instancia de Session.
+
         """
         # Get a session store for this request.
         self.session_store = sessions.get_store(request=self.request)
@@ -53,10 +52,20 @@ class BaseHandler(webapp2.RequestHandler):
             self.session_store.save_sessions(self.response)
     @webapp2.cached_property
     def session(self):
+        """Devuelve la sesión previamente guardada y en la que se almacenan los parámetros necesarios para la aplicación.
+
+        :return: Sesión previamente creada y guardada
+        :rtype: Session
+        """
         # Returns a session using the default cookie key.
         return self.session_store.get_session()
 
     def isAuthorized(self):
+        """Comprueba si los datos de la sesión son correctos.
+
+        :return: Sesión correcta o fallida
+        :rtype: bool
+        """
         return 'oauth_token' in self.session \
             and 'oauth_token_secret' in self.session \
             and 'user_id' in self.session \
@@ -67,12 +76,19 @@ config['webapp2_extras.sessions'] = {'secret_key': 'my-super-secret-key'}
 
 class MainHandler(BaseHandler):
     def get(self):
+        """Define la retrollamada (callback) del MainHandler (manipulador). Recibe un objeto (evento, mensaje, etc) y actua en función del mismo.
+        Si el usuario esta autorizado, muestra la pantalla principal. Si no es así, mostrará la pantalla de sesión no autorizada.
+
+        :param BaseHandler: Clase base para todos los handler (manipuladores) registrados
+        :type BaseHandler: BaseHandler
+        """
         # dependiendo de si existe una sessión autorizada
         # renderizamos un 'index' u otro
         if (self.isAuthorized()):
             # se ha añadido el nombre de usuario al objeto de sesión
             # para mostrarlo por pantalla
-            datos = { 'twitter_user' : self.session['twitter_user'] }
+            datos = { 'twitter_user' : self.session['twitter_user'],
+                        'firstlogin' : True }
 
             template = jinja_env.get_template("index_authorized.html")
             self.response.out.write(template.render(datos))
@@ -83,99 +99,116 @@ class MainHandler(BaseHandler):
 
 class SearchTweetsHandler(BaseHandler):
     def get(self):
+        """Define la retrollamada (callback) del SearchTweetsHandler (manipulador). Gestiona la pagina web donde se realizan las busquedas de contenido en Twitter.
+
+        :param BaseHandler: Clase base para todos los handler (manipuladores) registrados
+        :type BaseHandler: BaseHandler
+        """
         # cargamos la plantilla
-        template = jinja_env.get_template("search_results.html")
+        template = jinja_env.get_template("index_authorized.html")
 
         # recogemos el parámetro 'query'
         q = self.request.get('query')
 
-        # preparamos la petición
-        base_url = 'https://api.twitter.com/1.1/search/tweets.json'
-        method = 'GET'
-        oauth_token = self.session['oauth_token']
-        oauth_token_secret = self.session['oauth_token_secret']
+        if not q:
+            self.redirect('/')
+        else:        
+            # preparamos la petición
+            base_url = 'https://api.twitter.com/1.1/search/tweets.json'
+            method = 'GET'
+            try:
+                oauth_token = self.session['oauth_token']
+                oauth_token_secret = self.session['oauth_token_secret']
 
-        oauth_headers = {'oauth_token': oauth_token}
-        params = {'q' : q, 'count' : '100'}
+                oauth_headers = {'oauth_token': oauth_token}
+                params = {'q' : q, 'count' : '100'}
 
-        headers = {'User-Agent': 'Localizador de Tweets',
-                   'Authorization': createAuthHeader(
-                        method,
-                        base_url,
-                        oauth_headers,
-                        params,
-                        oauth_token_secret)
-                  }
-
-        # hacemos la petición
-        response = requests.get(base_url + '?q=' + q + '&count=100', headers=headers)
-         
-        # si la respuesta es correcta, se renderizan los resultados 
-        if (response.status_code == 200):
-            json_response = response.json()
-
-            tweets = []
-            for tweet in json_response['statuses']:
-                # se comprueba que existe la entrada 'place' en el diccionario del Tweet
-                if tweet['place']:
-                    user = tweet['user']['name']
-                    screen_name = tweet['user']['screen_name']
-                    text = tweet['text']
-                    location = tweet['place']
-                    name = location['full_name']
-                    
-                    # si contiene la entrada 'place', es posible que contenga coordenadas precisas
-                    # de la localización en 'coordinates' o 'geo' o que simplemente contenga
-                    # el nombre del lugar desde el que se ha tuiteado en location['place']['full_name']
-                    if tweet['coordinates']:
-                        logging.debug('Place has coordinates: ' + str(tweet['coordinates']))
-                        lon, lat = tweet['coordinates']['coordinates']
-
-                    elif tweet['geo']:
-                        logging.debug('Place has geo: ' + str(tweet['geo']))
-                        lat, lon = tweet['geo']['coordinates']
-
-                    # en este caso nos basaremos en el lugar para localizar el tweet
-                    else:
-                        lon, lat = None, None 
-                   
-                    # creamos un diccionario con los datos que nos interesan
-                    data = {
-                        'user' : user,
-                        'screen_name' : screen_name,
-                        'text' : text,
-                        'location' : {
-                            'name' : name,
-                            'lat' : lat,
-                            'lon' : lon
+                headers = {'User-Agent': 'Localizador de Tweets',
+                        'Authorization': createAuthHeader(
+                                method,
+                                base_url,
+                                oauth_headers,
+                                params,
+                                oauth_token_secret)
                         }
-                    }
 
-                    tweets.append(data)
+                # hacemos la petición
+                response = requests.get(base_url + '?q=' + q + '&count=100', headers=headers)
+           
+            
+            # si la respuesta es correcta, se renderizan los resultados 
+                if (response.status_code == 200):
+                    json_response = response.json()
 
-            query = self.request.get('query')
+                    tweets = []
+                    for tweet in json_response['statuses']:
+                        # se comprueba que existe la entrada 'place' en el diccionario del Tweet
+                        if tweet['place']:
+                            user = tweet['user']['name']
+                            screen_name = tweet['user']['screen_name']
+                            text = tweet['text']
+                            location = tweet['place']
+                            name = location['full_name']
+                            
+                            # si contiene la entrada 'place', es posible que contenga coordenadas precisas
+                            # de la localización en 'coordinates' o 'geo' o que simplemente contenga
+                            # el nombre del lugar desde el que se ha tuiteado en location['place']['full_name']
+                            if tweet['coordinates']:
+                                logging.debug('Place has coordinates: ' + str(tweet['coordinates']))
+                                lon, lat = tweet['coordinates']['coordinates']
 
-            # los datos que usaremos para crear el html de los resultados
-            # serán la query del usuario, el nombre de usuario y los tweets
-            datos = { 'query' : q,
-                'twitter_user' : self.session['twitter_user'],
-                'tweets' : tweets }
+                            elif tweet['geo']:
+                                logging.debug('Place has geo: ' + str(tweet['geo']))
+                                lat, lon = tweet['geo']['coordinates']
 
-            self.response.out.write(template.render(datos))
+                            # en este caso nos basaremos en el lugar para localizar el tweet
+                            else:
+                                lon, lat = None, None 
+                        
+                            # creamos un diccionario con los datos que nos interesan
+                            data = {
+                                'user' : user,
+                                'screen_name' : screen_name,
+                                'text' : text,
+                                'location' : {
+                                    'name' : name,
+                                    'lat' : lat,
+                                    'lon' : lon
+                                }
+                            }
 
-        # token invalido/caducado
-        elif (response.status_code == 401):
-            logging.debug('Invalid tokens') 
-            self.redirect('/OAuthTwitterHandler')
+                            tweets.append(data)
 
-        # error distinto
-        else:   
-            logging.debug(response.status_code)
-            logging.debug('Unknown error')
-            self.redirect('/OAuthTwitterHandler')
+                    query = self.request.get('query')
+
+                    # los datos que usaremos para crear el html de los resultados
+                    # serán la query del usuario, el nombre de usuario y los tweets
+                    datos = { 'query' : q,
+                        'twitter_user' : self.session['twitter_user'],
+                        'tweets' : tweets }
+
+                    self.response.out.write(template.render(datos))
+
+                # token invalido/caducado
+                elif (response.status_code == 401):
+                    logging.debug('Invalid tokens') 
+                    self.redirect('/OAuthTwitterHandler')
+
+                # error distinto
+                else:   
+                    logging.debug(response.status_code)
+                    logging.debug('Unknown error')
+                    self.redirect('/OAuthTwitterHandler')
+            except KeyError:
+                self.redirect('/OAuthTwitterHandler')
 
 class OAuthTwitterHandler(BaseHandler):
     def get(self):
+        """Redirige al usuario a la página oficial de Twitter para iniciar sesión.
+
+        :param BaseHandler: Clase base para todos los handler (manipuladores) registrados
+        :type BaseHandler: BaseHandler
+        """
         # Step 1: Obtaining a request token
         method = 'POST'
         url = 'https://api.twitter.com/oauth/request_token'
@@ -185,6 +218,7 @@ class OAuthTwitterHandler(BaseHandler):
                      'Authorization': createAuthHeader(method, url, oauth_headers, None, None)}
         respuesta = requests.post(url, headers=cabeceras)
         cuerpo = respuesta.text
+        logging.info(cuerpo)
 
         # Your application should examine the HTTP status of the response.
         # Any value other than 200 indicates a failure.
@@ -193,6 +227,7 @@ class OAuthTwitterHandler(BaseHandler):
 
         # Your application should verify that oauth_callback_confirmed is true
         oauth_callback_confirmed = cuerpo.split('&')[2].replace('oauth_callback_confirmed=', '')
+
         if oauth_callback_confirmed != 'true':
             logging.debug('oauth_callback_confirmed != true')
 
@@ -208,6 +243,11 @@ class OAuthTwitterHandler(BaseHandler):
 
 class OAuthTwitterCallbackHandler(BaseHandler):
     def get(self):
+        """Define la retrollamada (callback) de la API de Twitter al iniciar sesión desde la página oficial del servicio.
+
+        :param BaseHandler: Clase base para todos los handler (manipuladores) registrados
+        :type BaseHandler: BaseHandler
+        """
         oauth_token = self.request.get("oauth_token")
         oauth_verifier = self.request.get("oauth_verifier")
 
@@ -236,12 +276,27 @@ class OAuthTwitterCallbackHandler(BaseHandler):
         self.redirect('/')
         
 def createAuthHeader(method, base_url, oauth_headers, request_params, oauth_token_secret):
+    """Obtiene el token de autorización necesario para realizar peticiones a la API de Twitter.
+
+    :param method: Tipo de petición HTTP
+    :type method: str
+    :param base_url: URL base de la petición
+    :type base_url: str
+    :param oauth_headers: Cabeceras HTTP para la autenticación
+    :type oauth_headers: dict
+    :param request_params: Parámetros de la petición
+    :type request_params: dict
+    :param oauth_token_secret: Token secreto para la autenticación
+    :type oauth_token_secret: str
+    :return: Token de autorización para peticiones futuras
+    :rtype: str
+    """
     oauth_nonce = str(random.randint(0, 999999999))
     oauth_signature_method = "HMAC-SHA1" 
     oauth_timestamp = str(int(time.time()))
     oauth_version = "1.0"
 
-    oauth_headers.update({'oauth_consumer_key': consumer_key,
+    oauth_headers.update({'oauth_consumer_key': os.environ.get('TWITTER_CONSUMER_KEY'),
                           'oauth_nonce': oauth_nonce,
                           'oauth_signature_method': oauth_signature_method,
                           'oauth_timestamp': oauth_timestamp,
@@ -273,6 +328,21 @@ def createAuthHeader(method, base_url, oauth_headers, request_params, oauth_toke
     return authorization_header
 
 def createRequestSignature(method, base_url, oauth_headers, request_params, oauth_token_secret):
+    """Crea la firma para la autorización de la API de Twitter.
+
+    :param method: Tipo de petición HTTP
+    :type method: str
+    :param base_url: URL base de la petición
+    :type base_url: str
+    :param oauth_headers: Cabeceras HTTP para la autenticación
+    :type oauth_headers: dict
+    :param request_params: Parámetros de la petición
+    :type request_params: dict
+    :param oauth_token_secret: Token secreto para la autenticación
+    :type oauth_token_secret: str
+    :return: Token de autorización para peticiones futuras
+    :rtype: str
+    """
     encoded_params = ''
     params = {}
     params.update(oauth_headers)
@@ -291,9 +361,9 @@ def createRequestSignature(method, base_url, oauth_headers, request_params, oaut
                    "&" + urllib.quote(encoded_params, "")
 
     if oauth_token_secret == None:
-        signing_key = urllib.quote(consumer_secret, "") + "&"
+        signing_key = urllib.quote(os.environ.get('TWITTER_CONSUMER_SECRET'), "") + "&"
     else:
-        signing_key = urllib.quote(consumer_secret, "") + "&" + urllib.quote(oauth_token_secret, "")
+        signing_key = urllib.quote(os.environ.get('TWITTER_CONSUMER_SECRET'), "") + "&" + urllib.quote(oauth_token_secret, "")
 
     hashed = hmac.new(signing_key, signature_base, hashlib.sha1)
     oauth_signature = binascii.b2a_base64(hashed.digest())
@@ -302,6 +372,11 @@ def createRequestSignature(method, base_url, oauth_headers, request_params, oaut
 
 class LogoutHandler(BaseHandler):
     def get(self):
+        """Define la retrollamada (callback) de la API de Twitter al cerrar sesión. Recibe un objeto (evento, mensaje, etc) y actua en función del mismo.
+
+        :param BaseHandler: Clase base para todos los handler (manipuladores) registrados
+        :type BaseHandler: BaseHandler
+        """
         self.session.clear()
         self.redirect('/')
 

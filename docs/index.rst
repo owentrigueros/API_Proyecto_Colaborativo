@@ -4,8 +4,8 @@
    contain the root `toctree` directive.
    Welcome to API Proyecto Colaborativo's documentation!
 
-Bienvenido a la documentación de API Proyecto Colaborativo!
-===========================================================
+¡Bienvenid@ a la documentación de API Proyecto Colaborativo!
+============================================================
 
 .. Esto incluiría el README en el HTML, por ahora lo dejo así
    .. include:: ../README.md
@@ -20,7 +20,10 @@ Bienvenido a la documentación de API Proyecto Colaborativo!
    requisitos
    dop
    implicaciones-legales
-   
+   main
+
+
+>>>>>>> master
 Índices y tablas
 ==================
 

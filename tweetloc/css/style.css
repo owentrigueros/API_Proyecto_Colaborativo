@@ -1,89 +1,16 @@
-/* Dividir la página por la mitad, verticalmente */
-.split {
-  height: 100%;
-  width: 50%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  overflow-x: hidden;
-  padding-top: 20px;
+html, body {
+    height: 100%;
+  }
+  
+.min-100 {
+    min-height: 100%;
 }
 
-/* Control del ladoz izquierdo */
-.left {
-  left: 0;
+::-webkit-scrollbar {
+  width: 0px;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
 }
-
-/* Control del ladoz derecho */
-.right {
-  top: 2%;
-  right: 0;
-}
-
-/* Centrar contenido vertical y horizontalmente */
-.centered {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-/* Estilo general del Tweet */
-blockquote.twitter-tweet {
-  display: inline-block;
-  font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
-  font-size: 12px;
-  font-weight: bold;
-  line-height: 16px;
-  border-color: #eee #ddd #bbb;
-  border-radius: 5px;
-  border-style: solid;
-  border-width: 1px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-  margin: 10px 5px;
-  padding: 0 16px 16px 16px;
-  width: 95%;
-}
-
-/* Estilo del contenido del Tweet */
-blockquote.twitter-tweet p {
-  font-size: 16px;
-  font-weight: normal;
-  line-height: 20px;
-}
-
-/* Estilo del author del Tweet */
-blockquote.twitter-tweet a {
-  color: inherit;
-  font-weight: normal;
-  text-decoration: none;
-  outline: 0 none;
-}
-
-blockquote.twitter-tweet a:hover,
-blockquote.twitter-tweet a:focus {
-  text-decoration: underline;
-}
-
-/* Mapa */
-mapa {
-  width: 100%
-}
-
-/* Query */
-blockquote.query {
-  display: inline-block;
-  font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
-  font-size: 20px;
-  font-weight: normal;
-  line-height: 16px;
-  border-color: #eee #ddd #bbb;
-  border-radius: 5px;
-  border-style: solid;
-  border-width: 1px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-  margin: 10px 5px;
-  padding: 16px 16px 16px 16px;
-  width: 95%;
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
 }
