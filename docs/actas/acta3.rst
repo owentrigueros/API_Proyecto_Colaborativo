@@ -1,18 +1,17 @@
-.. _acta1:
+.. _acta3:
 
-Acta de reunión: Nº 1
+Acta de reunión: Nº 3
 *********************
 
 +---------------------------+-----------------------------------------------------+
 | | **Proyecto:**           | | TweetLoc                                          |
 | | **Equipo:**             | | Arreflar                                          |
 +---------------------------+-----------------------------------------------------+
-| **Asunto:**               | | Captura de requisitos.                            |
-|                           | | Decidir el gestor de documentación a utilizar.    |
-|                           | | Decidir el sistema de control de versiones.       | 
+| **Asunto:**               | | Planificación de las herramientas y alcance del   |
+|                           | | proyecto.                                         |
 +---------------------------+-----------------------------------------------------+
 | | **Lugar:**              | | Universidad, cafetería.                           |
-| | **Fecha:**              | | 10/02/2020                                        |
+| | **Fecha:**              | | 02/03/2020                                        |
 | | **Hora de comienzo:**   | | 14:00                                             |
 | | **Hora de fin:**        | | 15:00                                             |
 +---------------------------+-----------------------------------------------------+
@@ -33,28 +32,21 @@ Excusan su asistencia
 
 Asuntos a tratar
 ================
-	1. Realizar la captura de requisitos.
-	2. Buscar el gestor de documentación que se va ha utilizar.
-	3. Decidir el sistema de control de versiones.
+	1. Herramientas a utilizar en el proyecto.
+	2. Ciclo de vida.
 	
 
 Resumen de la reunión
 =====================
-Hemos decidido mejorar el aspecto visual de la página web llamada TweetLoc. 
-Además, también se sustituirá la API utilizada en el proyecto, en este caso 
-la de Google Maps, por una alternativa libre como es OpenStreetMaps.
-
-También se ha propuesto utilizar ReadTheDocs como gestor de documentación. Cada 
-integrante intentara buscar alguna alternativa que pueda ser mejor. 
-
-Por último, como sistema de control de versiones se dedicó utilizar Git, ya que 
-se tiene experiencia previa con él.
+Hemos terminado de definir cuáles son las herramientas a utilizar, tanto para la realización 
+del código como para la documentación. También hemos definido el ciclo de vida del proyecto, 
+el cual será lineal.
 
 
 
 Próxima reunión
 ===============
-10 de febrero de 2020
+2 de marzo de 2020
 
 
 

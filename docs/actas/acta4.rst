@@ -1,18 +1,17 @@
-.. _acta1:
+.. _acta4:
 
-Acta de reunión: Nº 1
+Acta de reunión: Nº 4
 *********************
 
 +---------------------------+-----------------------------------------------------+
 | | **Proyecto:**           | | TweetLoc                                          |
 | | **Equipo:**             | | Arreflar                                          |
 +---------------------------+-----------------------------------------------------+
-| **Asunto:**               | | Captura de requisitos.                            |
-|                           | | Decidir el gestor de documentación a utilizar.    |
-|                           | | Decidir el sistema de control de versiones.       | 
+| **Asunto:**               | | Planificación temporal.                           |
+|                           | | Discutir las implicaciones legales.               |
 +---------------------------+-----------------------------------------------------+
 | | **Lugar:**              | | Universidad, cafetería.                           |
-| | **Fecha:**              | | 10/02/2020                                        |
+| | **Fecha:**              | | 09/03/2020                                        |
 | | **Hora de comienzo:**   | | 14:00                                             |
 | | **Hora de fin:**        | | 15:00                                             |
 +---------------------------+-----------------------------------------------------+
@@ -33,28 +32,24 @@ Excusan su asistencia
 
 Asuntos a tratar
 ================
-	1. Realizar la captura de requisitos.
-	2. Buscar el gestor de documentación que se va ha utilizar.
-	3. Decidir el sistema de control de versiones.
+	1. Discutir la planificación temporal.
+	2. Discutir las implicaciones legales de nuestro proyecto.
 	
 
 Resumen de la reunión
 =====================
-Hemos decidido mejorar el aspecto visual de la página web llamada TweetLoc. 
-Además, también se sustituirá la API utilizada en el proyecto, en este caso 
-la de Google Maps, por una alternativa libre como es OpenStreetMaps.
+Para realizar la planificación temporal se ha decidido hacer uso de la herramienta GanttProject, ya que 
+se tiene experiencia previa con él, además de mostrar de una forma clara las tareas a lo largo del tiempo.
 
-También se ha propuesto utilizar ReadTheDocs como gestor de documentación. Cada 
-integrante intentara buscar alguna alternativa que pueda ser mejor. 
-
-Por último, como sistema de control de versiones se dedicó utilizar Git, ya que 
-se tiene experiencia previa con él.
-
+También se ha decidido que Owen Trigueros y Iker Urlezaga sean los encargados de buscar y analizar todas la 
+implicaciones legales de nuestro proyecto, para asegurar el cumplimiento de los términos de uso y leyes.
 
 
 Próxima reunión
 ===============
-10 de febrero de 2020
+9 de marzo de 2020
+
+
 
 
 

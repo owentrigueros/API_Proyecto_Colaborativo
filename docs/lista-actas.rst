@@ -8,3 +8,6 @@ Actas de reunión
    :caption: Actas:
 
    actas/acta1
+   actas/acta2
+   actas/acta3
+   actas/acta4
