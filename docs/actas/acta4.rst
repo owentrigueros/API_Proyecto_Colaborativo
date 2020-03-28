@@ -5,7 +5,6 @@ Acta de reunión: Nº 4
 
 +---------------------------+-----------------------------------------------------+
 | | **Proyecto:**           | | TweetLoc                                          |
-| | **Equipo:**             | | Arreflar                                          |
 +---------------------------+-----------------------------------------------------+
 | **Asunto:**               | | Planificación temporal.                           |
 |                           | | Discutir las implicaciones legales.               |
@@ -47,7 +46,7 @@ implicaciones legales de nuestro proyecto, para asegurar el cumplimiento de los 
 
 Próxima reunión
 ===============
-9 de marzo de 2020
+21 de marzo de 2020
 
 
 

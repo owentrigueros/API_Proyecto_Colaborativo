@@ -5,7 +5,6 @@ Acta de reunión: Nº 3
 
 +---------------------------+-----------------------------------------------------+
 | | **Proyecto:**           | | TweetLoc                                          |
-| | **Equipo:**             | | Arreflar                                          |
 +---------------------------+-----------------------------------------------------+
 | **Asunto:**               | | Planificación de las herramientas y alcance del   |
 |                           | | proyecto.                                         |
@@ -46,7 +45,7 @@ el cual será lineal.
 
 Próxima reunión
 ===============
-2 de marzo de 2020
+9 de marzo de 2020
 
 
 

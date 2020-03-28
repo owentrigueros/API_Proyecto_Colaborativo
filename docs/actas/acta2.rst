@@ -5,7 +5,6 @@ Acta de reunión: Nº 2
 
 +---------------------------+-----------------------------------------------------+
 | | **Proyecto:**           | | TweetLoc                                          |
-| | **Equipo:**             | | Arreflar                                          |
 +---------------------------+-----------------------------------------------------+
 | **Asunto:**               | | Decidir el gestor de documentación a utilizar.    |
 |                           | | Repartir tareas.                                  |
@@ -52,7 +51,7 @@ del equipo puede revisar el trabajo de los demás, y si es posible, puede correg
 
 Próxima reunión
 ===============
-17 de febrero de 2020
+2 de marzo de 2020
 
 
 

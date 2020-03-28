@@ -5,7 +5,6 @@ Acta de reunión: Nº 1
 
 +---------------------------+-----------------------------------------------------+
 | | **Proyecto:**           | | TweetLoc                                          |
-| | **Equipo:**             | | Arreflar                                          |
 +---------------------------+-----------------------------------------------------+
 | **Asunto:**               | | Captura de requisitos.                            |
 |                           | | Decidir el gestor de documentación a utilizar.    |
@@ -54,7 +53,7 @@ se tiene experiencia previa con él.
 
 Próxima reunión
 ===============
-10 de febrero de 2020
+17 de febrero de 2020
 
 
 
