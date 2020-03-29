@@ -281,8 +281,8 @@ Aquí se muestra la planificación temporal acordada entre los miembros del equi
    :widths: 20 12 12
    :class: myclass
 
-   **1. Planificación y gestión**, **?** , **49**
-   "1.1 Reuniones internas", ? , 49
+   **1. Planificación y gestión**, **16** , **49**
+   "1.1 Reuniones internas", 16 , 49
    **2. Documentación**, **41.5** , **41**
    "2.1 Despliegue de ReadTheDocs", 12, 21
    "2.2 Identificación de interesados", 2.5, 1

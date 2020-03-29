@@ -14,3 +14,5 @@ geolocalizar los resultados de búsqueda en un mapa incrustado en la propia pág
 * API: *Aplication Programming Interface* (Interfaz de programación de aplicaciones)
 * SCV: Sistema de Control de Versiones
 * SVN: Subversion
+* Handler: En castellano manejador, es un concepto capaz de recibir un objeto (evento, mensaje, etc) y actuar en función del mismo.
+* Token: Sustituto de información sensible utilizado para garantizar la seguridad de los datos.
