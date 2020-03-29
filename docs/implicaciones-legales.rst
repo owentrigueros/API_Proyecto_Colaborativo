@@ -8,7 +8,7 @@ En este apartado se analizan los aspectos legales relacionados con el proyecto.
 Reglamento Europeo de Protección de Datos
 *****************************************
 
-La aplicación utiliza un sistema de inicio de sesión para poder utilizar Twitter. Este sistema requiere que el usuario introduzca sus datos de Twitter para poder iniciar sesión. La *app*, en vez de guardar los datos de los usuarios, delega la resposanbilidad directamente en Twitter. Se observa que la fase de inicio de sesión se realiza en una dirección propia de Twitter. Por lo tanto, la aplicación no guarda los datos de sus usuarios en ningún momento, solo los utiliza temporalmente para mostrarlos por pantalla.
+La aplicación utiliza un sistema de inicio de sesión para poder utilizar Twitter. Este sistema requiere que el usuario introduzca sus datos de Twitter para poder iniciar sesión y así poder realizar búsquedas. La *app*, en vez de guardar los datos de los usuarios, delega la responsabilidad directamente en Twitter. Se observa que la fase de inicio de sesión se realiza en una dirección propia de Twitter, por lo tanto, la aplicación no guarda los datos de sus usuarios en ningún momento, solo los utiliza temporalmente para mostrarlos por pantalla.
 
 La principal funcionalidad de la *app* es la de conseguir *tweets* que contengan palabras clave y ubicarlos en un mapa. En cuanto a los datos de los *tweets*, el programa simplemente recoge lo necesario para situarlos en el mapa y en ningún caso guarda registro alguno del histórico de *tweets* ni los datos que contenían. 
 
