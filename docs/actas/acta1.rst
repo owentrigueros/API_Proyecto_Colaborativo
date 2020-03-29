@@ -10,7 +10,7 @@ Acta de reunión: Nº 1
 |                           | | Decidir el gestor de documentación a utilizar.    |
 |                           | | Decidir el sistema de control de versiones.       | 
 +---------------------------+-----------------------------------------------------+
-| | **Lugar:**              | | Universidad, cafetería.                           |
+| | **Lugar:**              | | Universidad.                           |
 | | **Fecha:**              | | 10/02/2020                                        |
 | | **Hora de comienzo:**   | | 14:00                                             |
 | | **Hora de fin:**        | | 15:00                                             |
@@ -33,7 +33,7 @@ Excusan su asistencia
 Asuntos a tratar
 ================
 	1. Realizar la captura de requisitos.
-	2. Buscar el gestor de documentación que se va ha utilizar.
+	2. Buscar el gestor de documentación que se va a utilizar.
 	3. Decidir el sistema de control de versiones.
 	
 
@@ -44,9 +44,9 @@ Además, también se sustituirá la API utilizada en el proyecto, en este caso
 la de Google Maps, por una alternativa libre como es OpenStreetMaps.
 
 También se ha propuesto utilizar ReadTheDocs como gestor de documentación. Cada 
-integrante intentara buscar alguna alternativa que pueda ser mejor. 
+integrante intentará buscar alguna alternativa que pueda ser mejor. 
 
-Por último, como sistema de control de versiones se dedicó utilizar Git, ya que 
+Por último, como sistema de control de versiones se decidió utilizar Git, ya que 
 se tiene experiencia previa con él.
 
 

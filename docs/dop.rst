@@ -20,7 +20,7 @@ En la :numref:`old_1` se muestra la pantalla de inicio de la aplicación a mejor
   :alt: Inicio de la versión antigua de la aplicación
   :figclass: old_1
   
-  Inicio de la versión antigua de la aplicación (sin sesión iniciado)
+  Inicio de la versión antigua de la aplicación (sin sesión iniciada)
 
 Por otro lado, en la :numref:`old_2` se muestra la pantalla de inicio una vez el usuario ha iniciado sesión, donde el usuario puede realizar las búsquedas.
 
@@ -30,7 +30,7 @@ Por otro lado, en la :numref:`old_2` se muestra la pantalla de inicio una vez el
   :alt: Inicio de la versión antigua de la aplicación (con sesión iniciado)
   :figclass: old_2
   
-  Inicio de la versión antigua de la aplicación (con sesión iniciado)
+  Inicio de la versión antigua de la aplicación (con sesión iniciada)
 
 Finalmente, la figura :numref:`old_3` muestra los resultados de una búsqueda, junto al mapa que permite localizar los *tweets*.
 
@@ -49,7 +49,7 @@ Objetivos del proyecto
 El objetivo de este proyecto es aplicar diferentes mejoras a una aplicación ya implementada.
 También se basará en aprender a utilizar correctamente herramientas de control de versiones, además de comparar diferentes alternativas.
 
-Para las mejoras de la aplicación se tratará de ampliar las funciones con las que dispone la aplicación original.
+Para las mejoras de la aplicación se tratará de ampliar las funciones de las que dispone la aplicación original.
 Además de realizar mejoras en el diseño de la aplicación web, se sustituirá la API Google Maps por una alternativa libre como OpenStreetMaps.
 
 Herramientas
@@ -65,7 +65,7 @@ Un sistema de control de versiones permite gestionar los cambios que se hacen so
 Git
 ---
 
-Git, desarrollado originalmente por Linus Torvalds, creado del kernel Linux, es el sistema de control de versiones más popular hoy en día, distribuido bajo la licencias *free software* GPLv2 y LGPLv2.1.
+Git, desarrollado originalmente por Linus Torvalds, creador del kernel Linux, es el sistema de control de versiones más popular hoy en día, distribuido bajo la licencias *free software* GPLv2 y LGPLv2.1.
 
 Es de arquitectura distribuida, lo que significa que existe una copia del repositorio y su historial completo de cambios en el sistema de cada desarrollador. También es descentralizado, lo que posibilita que los cambios puedan realizarse de manera local para posteriormente ser sincronizados con el resto de copias, sin requerir tener acceso a un servidor central y por tanto sin requerir tener Internet para realizar cambios en el repositorio (aunque esto último, hoy en día, no suponga realmente un problema). Otro aspecto a favor de Git es su buen rendimiento.
 
@@ -104,7 +104,7 @@ A continuación, teniendo en cuenta las características, ventajas y desventajas
 | **Rendimiento**              | Rápido                       | Medio                                |
 +------------------------------+------------------------------+--------------------------------------+
 
-Ambos tienen **licencias** permisivas, aunque Apache es menos restrictiva, ya que no requiere el *software* se distribuya bajo la misma licencia ni restringe la comercialización. En este aspecto, más bien de carácter legal, no se ha hecho mucho énfasis, dado que, a efectos prácticos, no se ha pensado en ninguna diferencia entre usar una y otra en este proyecto.
+Ambos tienen **licencias** permisivas, aunque Apache es menos restrictiva, ya que no requiere el *software* se distribuya bajo la misma licencia ni restringe la comercialización. En este aspecto, más bien de carácter legal, no se ha hecho mucho énfasis, dado que, a efectos prácticos, no se ha pensado en ninguna diferencia entre usar una u otra en este proyecto.
 
 En cuanto a la **popularidad**, se considera que Git cuenta con el punto a favor de contar con una comunidad de desarrolladores inmensa, a diferencia de SVN, que no es ni remotamente tan popular. Existe, por tanto, mucha documentación sobre Git (aunque también hay que tener en cuenta que más no es necesariamente mejor, y que, junto a tanta información, también habrá mucho ruido).
 
@@ -126,7 +126,7 @@ Wikis
 
 Término procediente del hawaiano y que significa rápido, se denomina a comunidades donde los usuarios crean, modifican o eliminan contenidos que comparten, generalmente, a través de páginas web.
 
-La tarea principal de estos wikis se trata de crear enciclopedias colectivas o diccionarios con el fin de compartir conocimientos y o textos dentro de diferentes grupos. Para lograr una idea más clara de esta herramienta, solo se debe pensar en páginas web como Wikipedia, WikiHow, etc. basadas en wikis y mundialmente conocidas.
+La tarea principal de estas wikis se trata de crear enciclopedias colectivas o diccionarios con el fin de compartir conocimientos y o textos dentro de diferentes grupos. Para lograr una idea más clara de esta herramienta, solo se debe pensar en páginas web como Wikipedia, WikiHow, etc. basadas en wikis y mundialmente conocidas.
 
 La mayor parte de wikis registran un historial de cambios a modo de línea de tiempo. De esta manera, la coordinación entre los usuarios resulta más fácil, permite recuperar ediciones anteriores y quedan registrados todos los cambios realizados en el tiempo.
 
@@ -182,12 +182,12 @@ El proyecto requiere de una planificación temporal, concretamente, un diagrama 
 
 Draw.io
 =======
-**Draw.io** es herramienta con la que se realizarán los diagramas del proyecto.
+**Draw.io** es la herramienta con la que se realizarán los diagramas del proyecto.
 
 Alcance del proyecto
 ********************
 
-A continuación se hablara del ciclo de vida del proyecto, además de definir las fases y funcionalidades adicionales que vamos a implementar en nuestro proyecto. 
+A continuación se hablará del ciclo de vida del proyecto, además de definir las fases y funcionalidades adicionales que vamos a implementar en nuestro. 
 
 Ciclo de vida
 =============
@@ -233,49 +233,47 @@ En la Estructura de Descomposición del Trabajo (EDT) (:numref:`edt`), se repres
 Planificación y gestión
 -----------------------
 
-	* **Reuniones internas:** Se realizarán reuniones entre los integrantes del equipo para acordar las tareas a realizar.
+	* **Reuniones internas:** se realizarán reuniones entre los integrantes del equipo para acordar las tareas a realizar.
 	
 	
 Documentación
 -------------
 
-	* **Introducción, descripción y objetivos:** Se realizarán los apartados "Introducción", "Descripción" y "Objetivos" de proyecto.
-	* **Herramientas:** Se realizará el apartado de "Herramientas", mostrando así las herramientas utilizadas para la realización de
+	* **Introducción, descripción y objetivos:** se realizarán los apartados "Introducción", "Descripción" y "Objetivos" de proyecto.
+	* **Herramientas:** se realizará el apartado de "Herramientas", mostrando así las herramientas utilizadas para la realización de
 	  este proyecto.
-	* **Alcance:** Se realizará la documentación del alcance.
-	* **Planificación temporal:** Se realizará la documentación y los diagramas de la planificación temporal.
-	* **Evaluación económica y riesgos:** Se realizará la evaluación económica y se identificaran los riesgos posibles.
-	* **Documento de requisitos:** Se realizará el documento de requisitos.
-	* **Identificación de interesados:** Se realizará el documento de identificación de interesados
-	* **Despliegue de ReadTheDocs:** Se desplegará el gestor de documentación ReadTheDocs para mostrar la documentación.
+	* **Alcance:** se realizará la documentación del alcance.
+	* **Planificación temporal:** se realizará la documentación y los diagramas de la planificación temporal.
+	* **Evaluación económica y riesgos:** se realizará la evaluación económica y se identificaran los riesgos posibles.
+	* **Documento de requisitos:** se realizará el documento de requisitos.
+	* **Identificación de interesados:** se realizará el documento de identificación de interesados
+	* **Despliegue de ReadTheDocs:** se desplegará el gestor de documentación ReadTheDocs para mostrar la documentación.
 	
 Desarrollo
 ----------
 
-	* **Captura de requisitos:** Se identificarán las tareas y restricciones del proyecto.
-	* **Mejora visual:** Se implementara la mejora visual de la página web.
-	* **Cambio API:** Se implementara la API libre de OpenStreetMaps, reemplazando la de Google Maps.
+	* **Captura de requisitos:** se identificarán las tareas y restricciones del proyecto.
+	* **Mejora visual:** se implementará la mejora visual de la página web.
+	* **Cambio API:** se implementará la API libre de OpenStreetMaps, reemplazando la de Google Maps.
 	
 Pruebas
 -------
 
-	* **Pruebas de funcionamiento:** Se comprobará el correcto funcionamiento de la aplicación.
-	* **Corrección de errores**
+	* **Pruebas de funcionamiento:** se comprobará el correcto funcionamiento de la aplicación.
+	* **Corrección de errores**: se hará una correción de errores en base a las prubeas realizadas.
 	
 	
 Finalización
 ------------
 
-	* **Preparar presentación:** Se preparara las diapositivas para la presentación.
-	* **Realizar presentación:** Se realizará la presentación del proyecto.
+	* **Preparar presentación:** se preparará las diapositivas para la presentación.
+	* **Realizar presentación:** se realizará la presentación del proyecto.
 	
 
 Planificación temporal
 **********************
 
-Aquí se muestra la planificación temporal acordada entre los miembros del equipo. A continuación, 
-se ha realizado un diagrama Gantt partiendo de esta tabla (:numref:`tabla_planificacion`), para mostrar de forma 
-más clara el desarrollo del proyecto, así como estimar su duración.
+Aquí se muestra la planificación temporal acordada entre los miembros del equipo. Se ha realizado un diagrama Gantt partiendo de esta tabla (:numref:`tabla_planificacion`), para mostrar de forma más clara el desarrollo del proyecto, así como estimar su duración.
 
 .. _tabla_planificacion:
 .. csv-table:: 
@@ -310,7 +308,7 @@ más clara el desarrollo del proyecto, así como estimar su duración.
 Diagrama GanttProject
 =====================
 
-A continuación se muestra la tabla con las fechas de inicio y fin de cada tarea proporcionada 
+A continuación, se muestra la tabla con las fechas de inicio y fin de cada tarea proporcionada 
 por GanttProject (:numref:`tweetloc_tabla`), además del diagrama (:numref:`tweetloc_plan`), donde se 
 refleja los recursos utilizados.
 

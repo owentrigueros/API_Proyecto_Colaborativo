@@ -9,7 +9,7 @@ Acta de reunión: Nº 4
 | **Asunto:**               | | Planificación temporal.                           |
 |                           | | Discutir las implicaciones legales.               |
 +---------------------------+-----------------------------------------------------+
-| | **Lugar:**              | | Universidad, cafetería.                           |
+| | **Lugar:**              | | Universidad.                           |
 | | **Fecha:**              | | 09/03/2020                                        |
 | | **Hora de comienzo:**   | | 14:00                                             |
 | | **Hora de fin:**        | | 15:00                                             |
