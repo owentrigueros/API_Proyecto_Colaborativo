@@ -45,6 +45,8 @@ extensions = [
     'sphinx.ext.viewcode',
 ]
 
+numfig = True
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
@@ -67,7 +69,7 @@ language = u'es'
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = [u'_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = [u'_build', 'Thumbs.db', '.DS_Store', 'appengine_config.py']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None
