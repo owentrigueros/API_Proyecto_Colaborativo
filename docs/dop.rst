@@ -49,13 +49,13 @@ Objetivos del proyecto
 El objetivo de este proyecto es aplicar diferentes mejoras a una aplicación ya implementada.
 También se basará en aprender a utilizar correctamente herramientas de control de versiones, además de comparar diferentes alternativas.
 
-Para las mejoras de la aplicación se tratará de ampliar las funciones de las que dispone la aplicación original.
+Para las mejoras de la aplicación se tratará de ampliar las funcionalidades de las que dispone la aplicación original.
 Además de realizar mejoras en el diseño de la aplicación web, se sustituirá la API Google Maps por una alternativa libre como OpenStreetMaps.
 
 Herramientas
 ************
 
-En esta sección se describen las herramientas empleadas para llevar a cabo el proyecto. Además, en el caso de el sistema de control de versiones y el gestor de documentación, se realiza un análisis de las alternativas que se han considerado y se explican las razones por las que se han elegido las que finalmente se han utilizado.
+En esta sección se describen las herramientas empleadas para llevar a cabo el proyecto. Además, en el caso del sistema de control de versiones y el gestor de documentación, se realiza un análisis de las alternativas que se han considerado y se explican las razones por las que se han elegido.
 
 Sistema de control de versiones
 ===============================
@@ -76,7 +76,7 @@ Subversion
 
 Subversion, conocido por las siglas SVN, es otro sistema de control de versiones, también de código abierto y con licencia *free software* (Apache License) y desarrollado por la Apache Software Foundation.
 
-Su arquitectura es centralizada, es decir, debe existir un servidor central en el que el repositorio se aloja el código y los cambios realizados. Esto implica que el usuario, desde su sistema, no puede crear, por ejemplo, *commits* de manera local. Debe tener acceso al servidor (y por tanto a Internet) para poder aplicar los cambios en el repositorio, alojado en el servidor central.
+Su arquitectura es centralizada, es decir, debe existir un servidor central en el se aloje el repositorio, con el código y los cambios realizados. Esto implica que el usuario, desde su sistema, no puede crear, por ejemplo, *commits* de manera local. Debe tener acceso al servidor (y por tanto a Internet) para poder aplicar los cambios en el repositorio, alojado en el servidor central.
 
 Hoy en día, aunque utilizado por diversos proyectos, no es de gran popularidad. Esto supone que no hay tanta información por parte de la comunidad, porque esta es más pequeña, y, por tanto, a la hora de resolver problemas que puedan surgir probablemente no sea tan fácil encontrar respuestas en foros como StackOverflow como lo puede ser con otros sistemas de control de versiones más populares.
 
@@ -104,7 +104,7 @@ A continuación, teniendo en cuenta las características, ventajas y desventajas
 | **Rendimiento**              | Rápido                       | Medio                                |
 +------------------------------+------------------------------+--------------------------------------+
 
-Ambos tienen **licencias** permisivas, aunque Apache es menos restrictiva, ya que no requiere el *software* se distribuya bajo la misma licencia ni restringe la comercialización. En este aspecto, más bien de carácter legal, no se ha hecho mucho énfasis, dado que, a efectos prácticos, no se ha pensado en ninguna diferencia entre usar una u otra en este proyecto.
+Ambos tienen **licencias** permisivas, aunque Apache es menos restrictiva, ya que no requiere que el *software* se distribuya bajo la misma licencia ni restringe la comercialización. En este aspecto, más bien de carácter legal, no se ha hecho mucho énfasis, dado que, a efectos prácticos, no se ha pensado en ninguna diferencia entre usar una u otra en este proyecto.
 
 En cuanto a la **popularidad**, se considera que Git cuenta con el punto a favor de contar con una comunidad de desarrolladores inmensa, a diferencia de SVN, que no es ni remotamente tan popular. Existe, por tanto, mucha documentación sobre Git (aunque también hay que tener en cuenta que más no es necesariamente mejor, y que, junto a tanta información, también habrá mucho ruido).
 
@@ -126,7 +126,7 @@ Wikis
 
 Término procediente del hawaiano y que significa rápido, se denomina a comunidades donde los usuarios crean, modifican o eliminan contenidos que comparten, generalmente, a través de páginas web.
 
-La tarea principal de estas wikis se trata de crear enciclopedias colectivas o diccionarios con el fin de compartir conocimientos y o textos dentro de diferentes grupos. Para lograr una idea más clara de esta herramienta, solo se debe pensar en páginas web como Wikipedia, WikiHow, etc. basadas en wikis y mundialmente conocidas.
+La tarea principal de estas wikis se trata de crear enciclopedias colectivas o diccionarios con el fin de compartir conocimientos o textos dentro de diferentes grupos. Para lograr una idea más clara de esta herramienta, solo se debe pensar en páginas web como Wikipedia, WikiHow, etc. basadas en wikis y mundialmente conocidas.
 
 La mayor parte de wikis registran un historial de cambios a modo de línea de tiempo. De esta manera, la coordinación entre los usuarios resulta más fácil, permite recuperar ediciones anteriores y quedan registrados todos los cambios realizados en el tiempo.
 
@@ -144,7 +144,7 @@ Al igual que en Git y el servicio de hosting GitHub, Sphinx también cuenta con 
 Wikis vs. Sphinx
 ----------------
 
-A continuación, y tal como se ha hecho en la comparación de Git vs. Subversion, se presenta una tabla para comparar ambas herramientas.
+A continuación, y tal como se ha hecho en la comparación de Git vs. Subversion, se presenta una tabla para equiparar ambas herramientas.
 
 +------------------------------+------------------------------+--------------------------------------+
 | **Criterios/Herramientas**   | Wikis                        | Sphinx                               |
@@ -205,16 +205,16 @@ Se ha decidido utilizar un ciclo de vida lineal (:numref:`ciclo_vida`), ya que e
 Fases del proyecto
 ==================
 
-	* **Planificación y gestión:** Para la correcta realización del proyecto se harán reuniones internas 
+	* **Planificación y gestión:** para la correcta realización del proyecto se harán reuniones internas 
 	  periódicas para planificar las tareas a realizar. Además de discutir las diferentes opciones que se puedan utilizar en 
 	  la mejora del proyecto.
-	* **Documentación:** A lo largo del proyecto se irá creando la documentación necesaria para el proyecto, como 
-	  por ejemplo: las actas de reunión, el documento de objetivos del proyecto, la documentación del código.
-	* **Desarrollo:** Con la captura de requisitos, se implementara las mejoras a la página web siguiendo el 
+	* **Documentación:** a lo largo del proyecto se irá creando la documentación necesaria para el proyecto, como 
+	  por ejemplo: las actas de reunión, el documento de objetivos del proyecto, la documentación del código, etc.
+	* **Desarrollo:** con la captura de requisitos, se implementarán las mejoras de la página web siguiendo el 
 	  diseño establecido.
-	* **Pruebas:** Ya terminado el proyecto se harán las pruebas necesarias para verificar el correcto funcionamiento 
+	* **Pruebas:** ya terminado el proyecto, se harán las pruebas necesarias para verificar el correcto funcionamiento 
 	  de la aplicación web.
-	* **Finalización:** Esta última fase consistirá de preparar la presentación.
+	* **Finalización:** esta última fase consistirá en preparar la presentación.
 
 Estructura de Descomposición del Trabajo
 ========================================
@@ -239,12 +239,12 @@ Planificación y gestión
 Documentación
 -------------
 
-	* **Introducción, descripción y objetivos:** se realizarán los apartados "Introducción", "Descripción" y "Objetivos" de proyecto.
+	* **Introducción, descripción y objetivos:** se realizarán los apartados "Introducción", "Descripción" y "Objetivos" del proyecto.
 	* **Herramientas:** se realizará el apartado de "Herramientas", mostrando así las herramientas utilizadas para la realización de
 	  este proyecto.
 	* **Alcance:** se realizará la documentación del alcance.
 	* **Planificación temporal:** se realizará la documentación y los diagramas de la planificación temporal.
-	* **Evaluación económica y riesgos:** se realizará la evaluación económica y se identificaran los riesgos posibles.
+	* **Evaluación económica y riesgos:** se realizará la evaluación económica y se identificarán los riesgos posibles.
 	* **Documento de requisitos:** se realizará el documento de requisitos.
 	* **Identificación de interesados:** se realizará el documento de identificación de interesados
 	* **Despliegue de ReadTheDocs:** se desplegará el gestor de documentación ReadTheDocs para mostrar la documentación.
@@ -266,7 +266,7 @@ Pruebas
 Finalización
 ------------
 
-	* **Preparar presentación:** se preparará las diapositivas para la presentación.
+	* **Preparar presentación:** se prepararán las diapositivas para la presentación.
 	* **Realizar presentación:** se realizará la presentación del proyecto.
 	
 
@@ -291,11 +291,11 @@ Aquí se muestra la planificación temporal acordada entre los miembros del equi
    "2.4.2 Herramientas", 3 , 3
    "2.4.3 Alcance", 7 , 5
    "2.4.4 Planificación temporal", 6 , 5
-   "2.9 Implicaciones legales", 3.5 , 2
+   "2.5 Implicaciones legales", 3.5 , 2
    **3 Desarrollo**, **50** , **46**
    "3.1 Captura de requisitos", 4 , 1
    "3.2 Mejora visual", 18 , 9
-   "3.3 Cambio API", 28 , 9
+   "3.3 Cambio de API", 28 , 9
    **4 Pruebas**, **4** , **2**
    "4.1 Pruebas de funcionamiento", 2 , 1
    "4.2 Corrección de errores", 2 , 1
@@ -310,7 +310,7 @@ Diagrama GanttProject
 
 A continuación, se muestra la tabla con las fechas de inicio y fin de cada tarea proporcionada 
 por GanttProject (:numref:`tweetloc_tabla`), además del diagrama (:numref:`tweetloc_plan`), donde se 
-refleja los recursos utilizados.
+reflejan los recursos utilizados.
 
 .. _tweetloc_tabla:
 .. figure:: _static/TweetLoc_tabla.png
