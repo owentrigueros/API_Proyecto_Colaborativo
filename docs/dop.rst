@@ -302,7 +302,7 @@ Aquí se muestra la planificación temporal acordada entre los miembros del equi
    **5 Finalización**, **6** , **2**
    "5.1 Preparar presentación", 4 , 1
    "5.2 Realizar presentación", 2 , 1
-   **Total Proyecto**, **101.5?**, **140**
+   **Total Proyecto**, **117.5**, **140**
    
    
 Diagrama GanttProject
