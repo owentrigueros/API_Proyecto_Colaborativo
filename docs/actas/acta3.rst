@@ -9,7 +9,7 @@ Acta de reunión: Nº 3
 | **Asunto:**               | | Planificación de las herramientas y alcance del   |
 |                           | | proyecto.                                         |
 +---------------------------+-----------------------------------------------------+
-| | **Lugar:**              | | Universidad.                           |
+| | **Lugar:**              | | Universidad.                                      |
 | | **Fecha:**              | | 02/03/2020                                        |
 | | **Hora de comienzo:**   | | 14:00                                             |
 | | **Hora de fin:**        | | 15:00                                             |

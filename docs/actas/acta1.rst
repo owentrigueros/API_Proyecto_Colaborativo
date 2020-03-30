@@ -10,7 +10,7 @@ Acta de reunión: Nº 1
 |                           | | Decidir el gestor de documentación a utilizar.    |
 |                           | | Decidir el sistema de control de versiones.       | 
 +---------------------------+-----------------------------------------------------+
-| | **Lugar:**              | | Universidad.                           |
+| | **Lugar:**              | | Universidad.                                      |
 | | **Fecha:**              | | 10/02/2020                                        |
 | | **Hora de comienzo:**   | | 14:00                                             |
 | | **Hora de fin:**        | | 15:00                                             |

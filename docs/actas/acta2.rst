@@ -9,7 +9,7 @@ Acta de reunión: Nº 2
 | **Asunto:**               | | Decidir el gestor de documentación a utilizar.    |
 |                           | | Repartir tareas.                                  |
 +---------------------------+-----------------------------------------------------+
-| | **Lugar:**              | | Universidad.                           |
+| | **Lugar:**              | | Universidad.                                      |
 | | **Fecha:**              | | 17/02/2020                                        |
 | | **Hora de comienzo:**   | | 14:00                                             |
 | | **Hora de fin:**        | | 15:00                                             |
